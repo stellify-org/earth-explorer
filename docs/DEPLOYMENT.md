@@ -14,6 +14,10 @@ USGS ComCat are open services. The API needs outbound HTTPS to them.
 
 - Docker Engine with the Compose plugin (`docker compose version`).
 - `curl` for the health check in `scripts/deploy.sh`.
+- Python 3.12 or newer with the `venv` module for the data download. Without it `scripts/fetch-data.sh`
+  runs the same steps in a one-off `python:3.12-slim` container.
+- Outbound HTTPS to AWS S3 (`us-west-2`) and HTTP to `igppweb.ucsd.edu` for the data download, and about
+  2 GB of free disk space (grids 883 MB, Python environment about 700 MB).
 - About 2 GB of free memory during the image build (the frontend build is the heavy step).
 
 ## Deploy
@@ -24,11 +28,14 @@ cd earth-explorer
 ./scripts/deploy.sh
 ```
 
-The script builds both images, starts the stack in the background and waits until
+The script downloads CRUST1.0, builds both images, starts the stack in the background and waits until
 `http://localhost:$WEB_PORT/api/v1/health` answers. It exits with a non-zero code and prints the
-container logs if the health check does not pass within two minutes.
+container logs if the health check does not pass within two minutes. Then it downloads the numeric
+grids, restarts the API and verifies the installation (see [Data and volumes](#data-and-volumes)).
+The application is already reachable while the grids are downloading.
 
-To update a running installation, pull the new revision and run the script again.
+To update a running installation, pull the new revision and run the script again. Data that is already
+in place is not downloaded again.
 
 ## Configuration
 
@@ -54,20 +61,44 @@ mode work only on HTTPS (or `localhost`), so a public installation needs TLS.
 | `api-cache` | named volume, `/data/cache` in `api` | Cached upstream API responses; safe to delete, it is refilled on demand |
 | `./data/grids` | bind mount, read-only, `/data/grids` in `api` | Optional numeric grids for the Scientific visualization panel |
 
-Without `data/grids` the application works, but the Scientific visualization panel lists no variables.
-Build the grids once on any machine with Python 3.12 or newer and copy the directory to the server:
+| `frontend/public/crust1` | static files baked into the `web` image | CRUST1.0 crust model for the X-Ray Earth mode |
+
+Neither the grids nor CRUST1.0 are in the repository. `scripts/fetch-data.sh` downloads both; no
+credentials are needed. `scripts/deploy.sh` calls it, and it can be run on its own:
 
 ```bash
-make grids
+make data
 ```
 
-This takes about 7 minutes and 150 MB of disk space per variable.
+| Step | What it does |
+|---|---|
+| `scripts/fetch-data.sh crust` | Runs `science/geo/build_crust1.py`: downloads the archive from the authors' site, checks its SHA-256 and writes `crust1.bin` (4 665 600 bytes) and `meta.json`. Skipped when the files are in place |
+| `scripts/fetch-data.sh grids` | Creates `science/.venv` when needed and runs `science/vis/build_grids.py` for `GRID_VARS`. Months already written are skipped, so only new months are downloaded. The output is also written to `data/fetch-grids.log` |
+| `scripts/fetch-data.sh verify` | Checks `/api/v1/health`, the number of packs in `/api/v1/packs` and the size of `/crust1/crust1.bin` |
+| `scripts/fetch-data.sh` | All of the above. Between the download and the verification it rebuilds `web` if the running image has no CRUST1.0 and restarts `api` if it does not list the expected packs |
 
-The grids are not in the repository (they are large and reproducible). Two ways to get them onto the server:
+The script exits with a non-zero code when a step fails; run it again to resume. It can run on a schedule
+to pick up new months.
 
-- build them there with `make grids`, when the server has a better link to NASA than your machine;
-- copy a local build: `make sync-grids DEST=user@host:/path/to/earth-explorer`. The copy is resumable;
-  `BWLIMIT=500` caps it at 500 KiB/s. Restart the API afterwards (`docker compose restart api`).
+| Variable | Default | Meaning |
+|---|---|---|
+| `GRID_VARS` | `t2m precip u10m v10m soilwet qv2m rh2m` | Grid variables to download |
+| `PACKS_EXPECTED` | `15` | Number of packs `/api/v1/packs` must list; change it together with `GRID_VARS` |
+| `PY_IMAGE` | `python:3.12-slim` | Image used when the host has no Python 3.12 |
+
+Numeric grids: 7 variables, 883 MB, 3850 files, monthly from 1981-01, from the NASA POWER archive on the
+Registry of Open Data on AWS (anonymous access). They are runtime data mounted into `api`, not part of
+an image. Without them the application works, but the Scientific visualization panel lists no variables
+and `/api/v1/packs` is empty. The first `/api/v1/packs` request after a restart reads the manifests and
+can take tens of seconds.
+
+CRUST1.0 is static frontend content: it has to be in `frontend/public/crust1` before `docker compose
+build web`. The model has no explicit redistribution licence, so every installation downloads it from
+the authors' site. Do not commit it and do not push the `web` image to a public registry.
+
+When the server has a poor link to AWS, build the grids on another machine and copy them:
+`make sync-grids DEST=user@host:/path/to/earth-explorer`. The copy is resumable; `BWLIMIT=500` caps it at
+500 KiB/s. Restart the API afterwards (`docker compose restart api`).
 
 ## Warming the cache
 

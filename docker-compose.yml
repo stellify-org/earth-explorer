@@ -1,17 +1,12 @@
 services:
-  grids:
-    build: ./science/vis
-    environment:
-      GRID_VARS: ${GRID_VARS:-t2m precip u10m v10m soilwet qv2m rh2m}
-    volumes:
-      - ./data/grids:/data/grids
-    restart: "no"
-
   api:
-    build: ./backend
-    depends_on:
-      grids:
-        condition: service_completed_successfully
+    build:
+      context: ./backend
+      additional_contexts:
+        science-vis: ./science/vis
+      args:
+        GRID_VARS: ${GRID_VARS:-t2m precip u10m v10m soilwet qv2m rh2m}
+        GRIDS_REFRESH: ${GRIDS_REFRESH:-}
     environment:
       PORT: "8787"
       CACHE_DIR: /data/cache
@@ -19,7 +14,6 @@ services:
       LOG_LEVEL: ${LOG_LEVEL:-info}
     volumes:
       - api-cache:/data/cache
-      - ./data/grids:/data/grids:ro
     restart: unless-stopped
     mem_limit: 256m
 

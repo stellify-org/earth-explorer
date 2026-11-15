@@ -5,11 +5,10 @@ cd "$(dirname "$0")/.."
 
 WEB_PORT="${WEB_PORT:-8080}"
 export WEB_PORT
+export GRIDS_REFRESH="${GRIDS_REFRESH:-$(date +%F)}"
 
 command -v docker >/dev/null || { echo "docker is not installed" >&2; exit 1; }
 docker compose version >/dev/null || { echo "docker compose plugin is not installed" >&2; exit 1; }
-
-mkdir -p data/grids
 
 docker compose build --pull
 docker compose up -d --remove-orphans

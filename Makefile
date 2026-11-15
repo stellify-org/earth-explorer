@@ -5,7 +5,7 @@ PY := science/.venv/bin/python
 GRID_VARS ?= t2m precip u10m v10m soilwet qv2m rh2m
 
 .DEFAULT_GOAL := help
-.PHONY: help up down restart logs ps deploy install api web build test test-backend test-frontend test-science smoke e2e venv grids sync-grids warm clean
+.PHONY: help up down restart logs ps deploy install api web build test test-backend test-frontend test-science smoke e2e venv data grids sync-grids warm clean
 
 help:
 	@echo "make up             build and start the app in Docker on port $(WEB_PORT)"
@@ -20,6 +20,7 @@ help:
 	@echo "make test-science   Python reference tests"
 	@echo "make smoke          live check against a running API"
 	@echo "make e2e            Playwright regression against URL=$(URL)"
+	@echo "make data           fetch CRUST1.0 and the numeric grids, then verify (scripts/fetch-data.sh)"
 	@echo "make grids          ingest numeric grids into data/grids (GRID_VARS=...)"
 	@echo "make sync-grids     copy data/grids to a server (DEST=user@host:/path)"
 	@echo "make warm           fill the API cache of a running installation"
@@ -81,6 +82,9 @@ smoke:
 
 e2e:
 	node tests/e2e/mode-switch.mjs $(URL)
+
+data:
+	WEB_PORT=$(WEB_PORT) GRID_VARS="$(GRID_VARS)" ./scripts/fetch-data.sh
 
 grids: venv
 	$(PY) -I science/vis/build_grids.py data/grids $(GRID_VARS)

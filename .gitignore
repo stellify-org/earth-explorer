@@ -6,6 +6,7 @@
 
 # python
 science/.venv/
+science/.venv-docker/
 __pycache__/
 *.pyc
 .pytest_cache/

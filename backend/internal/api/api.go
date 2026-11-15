@@ -26,7 +26,7 @@ import (
 	"github.com/stellify/earth-explorer/backend/internal/visgrid"
 )
 
-var Version = "0.1.0-dev"
+var Version = "0.5.0"
 
 type Server struct {
 	Power        *power.Client

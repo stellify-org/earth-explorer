@@ -1,0 +1,220 @@
+{
+ "id": "aral",
+ "name": "Aral Sea, Kazakhstan and Uzbekistan",
+ "version": 1,
+ "grid": {
+  "west": 57.5,
+  "north": 47.5,
+  "cell_deg": 0.008,
+  "width": 625,
+  "height": 562,
+  "bytes": 1053750,
+  "sha256": "55147dab657e673a0d8f7f0947eab3f19ebd018ae20030e7d47d4805395557eb",
+  "planes": [
+   "water: bit k = at least half of the block is permanent water in years[k]",
+   "no data: bit k = at least half of the block has no data in years[k]",
+   "region: 1 = inside the sea region"
+  ]
+ },
+ "years": [
+  1987,
+  1992,
+  1998,
+  2000,
+  2005,
+  2010,
+  2015,
+  2021
+ ],
+ "areas": [
+  {
+   "year": 1987,
+   "all": {
+    "permanent_km2": 39426.2,
+    "seasonal_km2": 3819.3,
+    "no_data_km2": 268.2
+   },
+   "drawn_km2": 39901.0,
+   "joined": false,
+   "north": {
+    "permanent_km2": 2983.6,
+    "seasonal_km2": 69.4,
+    "no_data_km2": 28.1
+   },
+   "south": {
+    "permanent_km2": 36442.5,
+    "seasonal_km2": 3749.9,
+    "no_data_km2": 240.1
+   }
+  },
+  {
+   "year": 1992,
+   "all": {
+    "permanent_km2": 36395.3,
+    "seasonal_km2": 1311.1,
+    "no_data_km2": 302.0
+   },
+   "drawn_km2": 36605.9,
+   "joined": false,
+   "north": {
+    "permanent_km2": 3024.2,
+    "seasonal_km2": 50.6,
+    "no_data_km2": 29.1
+   },
+   "south": {
+    "permanent_km2": 33371.1,
+    "seasonal_km2": 1260.5,
+    "no_data_km2": 272.9
+   }
+  },
+  {
+   "year": 1998,
+   "all": {
+    "permanent_km2": 30239.2,
+    "seasonal_km2": 1089.0,
+    "no_data_km2": 276.6
+   },
+   "drawn_km2": 30137.4,
+   "joined": false,
+   "north": {
+    "permanent_km2": 3250.0,
+    "seasonal_km2": 50.7,
+    "no_data_km2": 44.8
+   },
+   "south": {
+    "permanent_km2": 26989.2,
+    "seasonal_km2": 1038.2,
+    "no_data_km2": 231.7
+   }
+  },
+  {
+   "year": 2000,
+   "all": {
+    "permanent_km2": 26440.0,
+    "seasonal_km2": 2787.5,
+    "no_data_km2": 262.4
+   },
+   "drawn_km2": 26390.7,
+   "joined": false,
+   "north": {
+    "permanent_km2": 2898.6,
+    "seasonal_km2": 115.7,
+    "no_data_km2": 27.8
+   },
+   "south": {
+    "permanent_km2": 23541.5,
+    "seasonal_km2": 2671.8,
+    "no_data_km2": 234.6
+   }
+  },
+  {
+   "year": 2005,
+   "all": {
+    "permanent_km2": 19629.2,
+    "seasonal_km2": 2873.2,
+    "no_data_km2": 261.1
+   },
+   "drawn_km2": 19522.2,
+   "joined": false,
+   "north": {
+    "permanent_km2": 2965.3,
+    "seasonal_km2": 115.5,
+    "no_data_km2": 28.2
+   },
+   "south": {
+    "permanent_km2": 16663.9,
+    "seasonal_km2": 2757.6,
+    "no_data_km2": 232.9
+   }
+  },
+  {
+   "year": 2010,
+   "all": {
+    "permanent_km2": 13671.5,
+    "seasonal_km2": 3527.6,
+    "no_data_km2": 283.8
+   },
+   "drawn_km2": 13662.5,
+   "joined": false,
+   "north": {
+    "permanent_km2": 3304.6,
+    "seasonal_km2": 88.4,
+    "no_data_km2": 37.4
+   },
+   "south": {
+    "permanent_km2": 10366.8,
+    "seasonal_km2": 3439.2,
+    "no_data_km2": 246.4
+   }
+  },
+  {
+   "year": 2015,
+   "all": {
+    "permanent_km2": 9209.7,
+    "seasonal_km2": 5971.8,
+    "no_data_km2": 244.9
+   },
+   "drawn_km2": 9194.2,
+   "joined": false,
+   "north": {
+    "permanent_km2": 3287.6,
+    "seasonal_km2": 106.9,
+    "no_data_km2": 36.4
+   },
+   "south": {
+    "permanent_km2": 5922.1,
+    "seasonal_km2": 5864.9,
+    "no_data_km2": 208.5
+   }
+  },
+  {
+   "year": 2021,
+   "all": {
+    "permanent_km2": 5865.5,
+    "seasonal_km2": 1233.1,
+    "no_data_km2": 240.8
+   },
+   "drawn_km2": 5855.7,
+   "joined": false,
+   "north": {
+    "permanent_km2": 3182.5,
+    "seasonal_km2": 129.7,
+    "no_data_km2": 33.0
+   },
+   "south": {
+    "permanent_km2": 2683.0,
+    "seasonal_km2": 1103.4,
+    "no_data_km2": 207.8
+   }
+  }
+ ],
+ "region": {
+  "area_km2": 44509.1,
+  "seed": {
+   "lat": 45.0,
+   "lon": 58.6
+  },
+  "seed_north": {
+   "lat": 46.5,
+   "lon": 60.7
+  },
+  "note": "Sea region: squares that are at least half water in any of these years and connected to the middle of the sea. North Aral = the connected water that holds a point in the Small Aral, with its shore; South Aral = the rest of the region. In a year when the two are still one connected water body at this resolution, no split is given."
+ },
+ "source": {
+  "name": "JRC Global Surface Water v1.4, yearly water classification (1984–2021), 30 m, from Landsat 5, 7 and 8",
+  "citation": "Pekel, J.-F., Cottam, A., Gorelick, N., Belward, A.S. (2016). High-resolution mapping of global surface water and its long-term changes. Nature 540, 418–422. doi:10.1038/nature20584",
+  "url": "https://global-surface-water.appspot.com/download",
+  "tiles": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GSWE/YearlyClassification/LATEST/tiles/",
+  "licence": "“All data here is produced under the Copernicus Programme and is provided free of charge, without restriction of use.” (download page)",
+  "attribution": "Source: EC JRC/Google",
+  "classes": {
+   "0": "no data",
+   "1": "not water",
+   "2": "seasonal water",
+   "3": "permanent water"
+  },
+  "built_at": "2026-11-14T10:05:16Z",
+  "note": "Not a NASA/USGS product; derived from USGS/NASA Landsat imagery. The last year of this data set is 2021."
+ },
+ "method": "Areas are sums of 30 m pixels (true pixel area on the WGS84 ellipsoid) inside the sea region. “Permanent” = water in every month that had a valid observation in that year; “seasonal” = water in some of them. Where a year has “no data” the water area of that year is a lower bound."
+}

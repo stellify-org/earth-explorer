@@ -1,0 +1,184 @@
+{
+ "id": "nurek",
+ "name": "Nurek Reservoir, Tajikistan",
+ "grid": {
+  "zoom": 11,
+  "x0": 362989,
+  "y0": 201110,
+  "width": 700,
+  "height": 670,
+  "units": "m",
+  "dtype": "int16le",
+  "projection": "Web Mercator pixel grid (cell centres at x0+j+0.5, y0+i+0.5 global pixels)",
+  "approx_cell_m": 59.9,
+  "sha256": "315962808a1bcc0ec79d12a7b2f2a4ce6e5ce3a6eef5e7ad6db529e04f1e5aa3",
+  "bytes": 938000
+ },
+ "dem_water": {
+  "level_m": 864,
+  "seed": [
+   501,
+   76
+  ],
+  "flat_cells": 10317,
+  "note": "Flat water surface recorded in the elevation data (SRTM, February 2000). Vertical datum EGM96; the published levels use the national height system, so offsets of the order of a metre are possible."
+ },
+ "dam": {
+  "lat": 38.3717,
+  "lon": 69.3481,
+  "barrier_radius_m": 900,
+  "barrier_min_elev_m": 895,
+  "note": "Cells of the dam body (within the radius and at or above this elevation) cannot be flooded or crossed."
+ },
+ "sources": {
+  "elevation": {
+   "name": "Terrain Tiles (Mapzen/Tilezen) on AWS Open Data, zoom 11; SRTM (NASA/USGS) in this region",
+   "url": "https://registry.opendata.aws/terrain-tiles/",
+   "licence": "SRTM: public domain; attribution per Tilezen",
+   "tiles": "11/1417-1420/785-788"
+  },
+  "precipitation": {
+   "name": "NASA POWER climatology, PRECTOTCORR (MERRA-2 based)",
+   "url": "https://power.larc.nasa.gov/api/temporal/climatology/point?parameters=PRECTOTCORR&community=AG&longitude=69.45&latitude=38.37&format=JSON",
+   "retrieved_at": "2026-11-14T08:24:18Z",
+   "api_version": "v2.10.1",
+   "period": "25-year Meteorological and Solar Monthly & Annual Climatologies (January 2001 - December 2025)",
+   "point": {
+    "lat": 38.37,
+    "lon": 69.45
+   },
+   "units": "mm/day",
+   "note": "One 0.5° × 0.625° grid cell over the reservoir; rain on the lake only, not the catchment."
+  }
+ },
+ "precipitation_mm_per_day": [
+  1.23,
+  1.85,
+  1.79,
+  1.84,
+  1.12,
+  0.39,
+  0.1,
+  0.04,
+  0.05,
+  0.36,
+  1.18,
+  1.21
+ ],
+ "precipitation_annual_mm_per_day": 0.92,
+ "published": {
+  "citation": "OSHPC Barki Tojik / Coyne et Bellier, ELC Electroconsult, IPA (2014). Techno-Economic Assessment Study for Rogun Hydroelectric Construction Project, Phase II, Vol. 3, Chapter 5: Reservoir Operation Study (report P.002378 RP 40), published by the World Bank.",
+  "url": "https://www.worldbank.org/content/dam/Worldbank/document/eca/central-asia/TEAS_Reservoir%20operation%20study_Final_eng.pdf",
+  "transcribed": "2026-11-14",
+  "full_supply_level_masl": {
+   "value": 910,
+   "where": "p. 17"
+  },
+  "minimum_operating_level_masl": {
+   "value": 857,
+   "where": "p. 17"
+  },
+  "storage_law": {
+   "a": 2.41,
+   "b": 1.64,
+   "z0_masl": 762.7,
+   "units": "hm3",
+   "valid_from_masl": 857,
+   "valid_to_masl": 910,
+   "where": "p. 19",
+   "note": "Fitted to 1991–2011 operation records; an average law for that period. The report states an active storage of 4.2 km3; the law with these rounded parameters gives 4.50 km3 between 857 and 910 m."
+  },
+  "evaporation_mm_per_month": {
+   "values": [
+    43,
+    0,
+    20,
+    25,
+    39,
+    73,
+    105,
+    138,
+    128,
+    89,
+    91,
+    54
+   ],
+   "year_total_mm": 805,
+   "where": "Table 2.6, p. 18 (from the designer's report; one table is given for Rogun and Nurek)"
+  },
+  "mean_inflow_hm3_per_year": {
+   "value": 21000,
+   "where": "p. 15 (\"21 000 hm3 of yearly inflows\")"
+  },
+  "capacity_surveys_km3": {
+   "where": "Table 2.8, p. 18",
+   "years": [
+    1972,
+    1989,
+    1994,
+    2001
+   ],
+   "total": [
+    10.5,
+    8.66,
+    7.96,
+    8.63
+   ],
+   "live": [
+    4.5,
+    3.4,
+    3.06,
+    4.27
+   ],
+   "dead": [
+    6.0,
+    5.26,
+    4.9,
+    4.36
+   ],
+   "note": "The report calls the differences between surveys doubtful and the present volume not well known."
+  }
+ },
+ "land_cover": {
+  "file": "nurek_landcover.bin",
+  "dtype": "uint8",
+  "bytes": 469000,
+  "sha256": "c2c279092cecd52d308c20741b668c46dceadf23d256ca8b11c10df16eea4537",
+  "classes": {
+   "10": "Tree cover",
+   "20": "Shrubland",
+   "30": "Grassland",
+   "40": "Cropland",
+   "50": "Built-up",
+   "60": "Bare / sparse vegetation",
+   "70": "Snow and ice",
+   "80": "Permanent water bodies",
+   "90": "Herbaceous wetland",
+   "95": "Mangroves",
+   "100": "Moss and lichen"
+  },
+  "cells_per_class": {
+   "10": 59222,
+   "20": 18,
+   "30": 332940,
+   "40": 32716,
+   "50": 6446,
+   "60": 10126,
+   "80": 27532
+  },
+  "name": "ESA WorldCover 10 m 2021 v200",
+  "url": "https://esa-worldcover.s3.eu-central-1.amazonaws.com/v200/2021/map/ESA_WorldCover_10m_2021_v200_N36E069_Map.tif",
+  "licence": "CC BY 4.0",
+  "attribution": "© ESA WorldCover project 2021 / Contains modified Copernicus Sentinel data (2021) processed by ESA WorldCover consortium",
+  "method": "Each elevation cell (about 60 m) takes the most frequent class of the 10 m WorldCover pixels whose centres fall inside it.",
+  "retrieved_at": "2026-11-14T08:24:41Z",
+  "downloaded_bytes": 1715301,
+  "window_px": [
+   2937,
+   4739,
+   8706,
+   9065
+  ],
+  "samples_per_cell_median": 54
+ }
+}

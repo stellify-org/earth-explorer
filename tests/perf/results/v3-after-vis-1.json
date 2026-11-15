@@ -1,0 +1,64 @@
+{
+  "label": "after-vis-1",
+  "url": "http://localhost:8088/",
+  "mbps": 1,
+  "date": "2026-11-08T16:10:05.790Z",
+  "loadEventMs": 7585,
+  "firstGlobeMs": 14468,
+  "initial": {
+    "requests": 21,
+    "bytes": 1028030,
+    "byHost": {
+      "localhost:8088": {
+        "requests": 20,
+        "bytes": 1028030,
+        "failed": 0
+      },
+      "": {
+        "requests": 1,
+        "bytes": 0,
+        "failed": 0
+      }
+    }
+  },
+  "initialJsBytes": 873877,
+  "memoryAfterLoad": {
+    "jsHeapUsedMB": 17.3,
+    "jsHeapTotalMB": 33.9
+  },
+  "navigation": {
+    "frames": 13,
+    "seconds": 8.0355,
+    "fps": 1.6,
+    "requests": 0,
+    "bytes": 0,
+    "byHost": {}
+  },
+  "memoryAfterNavigate": {
+    "jsHeapUsedMB": 20.6,
+    "jsHeapTotalMB": 33.9
+  },
+  "idle": {
+    "requests": 0,
+    "bytes": 0,
+    "byHost": {}
+  },
+  "vis": {
+    "months": 24,
+    "allShown": true,
+    "medianUpdateMs": 1608,
+    "gridRequests": 24,
+    "gridBytes": 595724,
+    "bytesPerFrame": 24822,
+    "heapBeforeMB": 19,
+    "heapAfterMB": 23.3,
+    "repeatGridRequests": 0,
+    "repeatNetworkBytes": 0,
+    "heapAfterRepeatMB": 24
+  },
+  "storage": {
+    "usageMB": 0,
+    "quotaMB": 834
+  },
+  "consoleErrors": []
+}

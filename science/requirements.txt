@@ -1,0 +1,15 @@
+# Reference/validation toolkit (offline). Versions verified installable on 2026-11-05.
+numpy>=2.5
+scipy>=1.18
+pandas>=2.3
+statsmodels>=0.15
+pymannkendall==1.4.3
+pytest>=8
+# Grid ingest (science/vis/build_grids.py) and basemap build (science/geo/build_basemap.py)
+xarray>=2025
+zarr>=3
+s3fs>=2025
+shapely>=2
+pillow>=11
+# Overture Maps GeoParquet for science/geo/build_nurek_buildings.py (installed 26.0.1 on 2026-11-14)
+pyarrow>=20

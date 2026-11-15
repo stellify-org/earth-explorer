@@ -1,0 +1,66 @@
+{
+  "label": "vis-1mbps-nosw",
+  "url": "http://localhost:4173/",
+  "throttled": true,
+  "date": "2026-11-05T16:07:53.895Z",
+  "loadEventMs": 11368,
+  "firstGlobeMs": 27078,
+  "initial": {
+    "requests": 25,
+    "bytes": 3070131,
+    "byHost": {
+      "localhost:4173": {
+        "requests": 24,
+        "bytes": 3070131,
+        "failed": 0
+      },
+      "": {
+        "requests": 1,
+        "bytes": 0,
+        "failed": 0
+      }
+    }
+  },
+  "initialJsBytes": 1326326,
+  "memoryAfterLoad": {
+    "jsHeapUsedMB": 29.9,
+    "jsHeapTotalMB": 39.7
+  },
+  "navigation": {
+    "frames": 16,
+    "seconds": 8.432,
+    "fps": 1.9,
+    "requests": 0,
+    "bytes": 0,
+    "byHost": {}
+  },
+  "memoryAfterNavigate": {
+    "jsHeapUsedMB": 21.2,
+    "jsHeapTotalMB": 24.3
+  },
+  "idle": {
+    "requests": 1,
+    "bytes": 436,
+    "byHost": {
+      "localhost:4173": {
+        "requests": 1,
+        "bytes": 436,
+        "failed": 0
+      }
+    }
+  },
+  "vis": {
+    "months": 24,
+    "allShown": true,
+    "medianUpdateMs": 1151,
+    "gridRequests": 27,
+    "gridBytes": 645640,
+    "bytesPerFrame": 23913,
+    "heapBeforeMB": 22.8,
+    "heapAfterMB": 23.2,
+    "repeatGridRequests": 1,
+    "repeatNetworkBytes": 0,
+    "heapAfterRepeatMB": 24.2
+  },
+  "consoleErrors": []
+}

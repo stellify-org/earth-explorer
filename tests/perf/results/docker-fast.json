@@ -1,0 +1,93 @@
+{
+  "label": "docker-fast",
+  "url": "http://localhost:8088/",
+  "throttled": false,
+  "date": "2026-11-05T14:49:39.654Z",
+  "loadEventMs": 520,
+  "firstGlobeMs": 5186,
+  "initial": {
+    "requests": 24,
+    "bytes": 2158023,
+    "byHost": {
+      "localhost:8088": {
+        "requests": 23,
+        "bytes": 2158023,
+        "failed": 0
+      },
+      "": {
+        "requests": 1,
+        "bytes": 0,
+        "failed": 0
+      }
+    }
+  },
+  "initialJsBytes": 1314645,
+  "memoryAfterLoad": {
+    "jsHeapUsedMB": 25.9,
+    "jsHeapTotalMB": 37.6
+  },
+  "navigation": {
+    "frames": 17,
+    "seconds": 8.423800000011921,
+    "fps": 2,
+    "requests": 0,
+    "bytes": 0,
+    "byHost": {}
+  },
+  "memoryAfterNavigate": {
+    "jsHeapUsedMB": 29.7,
+    "jsHeapTotalMB": 39.7
+  },
+  "idle": {
+    "requests": 0,
+    "bytes": 0,
+    "byHost": {}
+  },
+  "flaky": {
+    "trendOk": true,
+    "tilesLoaded": true,
+    "status": "●Online",
+    "newConsoleErrors": [],
+    "requests": 6,
+    "bytes": 2188,
+    "byHost": {
+      "localhost:8088": {
+        "requests": 6,
+        "bytes": 2188,
+        "failed": 0
+      }
+    }
+  },
+  "trendOnline": 0.3521965439,
+  "serviceWorker": {
+    "active": true,
+    "controlled": true,
+    "waitedMs": 0
+  },
+  "offline": {
+    "reloaded": true,
+    "firstGlobeMs": 4174,
+    "ms": 6098,
+    "appText": "Earth Explorer\nresearch prototype\nExplore\nCompare\nX-Ray\nScenario Lab\n○\nOffline: local data only\nOffline library\nData & credits\n1 · LOCATION\nGo\nExample places…\nDushanbe, Tajikistan\nPamir mountains, Tajikistan\nAral Sea region\nCentral Amazon, Brazil\nSahel, Niger\nGreenland ice sheet margin\nYakutsk, Russ",
+    "trendOffline": {
+      "slope": 0.3521965439,
+      "swCache": "Thu, 05 Nov 2026 14:50:32 GMT"
+    },
+    "status": "○Offline: local data only",
+    "requests": 24,
+    "bytes": 0,
+    "byHost": {
+      "localhost:8088": {
+        "requests": 23,
+        "bytes": 0,
+        "failed": 0
+      },
+      "": {
+        "requests": 1,
+        "bytes": 0,
+        "failed": 0
+      }
+    }
+  },
+  "consoleErrors": []
+}

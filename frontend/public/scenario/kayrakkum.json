@@ -1,0 +1,242 @@
+{
+ "id": "kayrakkum",
+ "name": "Bahri Tojik (Kayrakkum Reservoir), Tajikistan",
+ "grid": {
+  "zoom": 10,
+  "x0": 181840,
+  "y0": 98746,
+  "width": 656,
+  "height": 373,
+  "units": "m",
+  "dtype": "int16le",
+  "projection": "Web Mercator pixel grid (cell centres at x0+j+0.5, y0+i+0.5 global pixels)",
+  "approx_cell_m": 116.5,
+  "sha256": "a7ec1c24246c3f78038d99e33eb3570c1df9d621b09f8244d94bde24c789131e",
+  "bytes": 489376
+ },
+ "dem_water": {
+  "level_m": 345,
+  "seed": [
+   213,
+   361
+  ],
+  "flat_cells": 30585,
+  "area_km2": 418.3,
+  "touches_edge": false,
+  "noise_m": 0,
+  "flattened_cells": 0,
+  "note": "Flat water surface recorded in the elevation data (SRTM, February 2000). Vertical datum EGM96; published levels use the national (Baltic) height system, so offsets of the order of a metre are possible."
+ },
+ "masks": {
+  "file": "kayrakkum_mask.bin",
+  "bytes": 244688,
+  "sha256": "f04bf75d427ec963cab80a088d3b1bffc981f4908766b5bcde70861dc41274a3",
+  "bits": {
+   "1": "inside the lake outline of OpenStreetMap",
+   "2": "dam body: cannot be flooded or crossed"
+  },
+  "osm_lake_area_km2": 422.26,
+  "barrier_cells": 63
+ },
+ "dam": {
+  "lat": 40.28071,
+  "lon": 69.81576,
+  "name": "Kayrakkum Dam",
+  "note": "Cells of the dam body (OpenStreetMap outline, widened by 1.5 cells, above the water) cannot be flooded or crossed."
+ },
+ "labels": [
+  {
+   "text": "Kayrakkum Dam",
+   "lat": 40.28071,
+   "lon": 69.81576,
+   "kind": "dam"
+  },
+  {
+   "text": "Besharyk",
+   "lat": 40.4379858,
+   "lon": 70.6039542,
+   "kind": "town"
+  },
+  {
+   "text": "Konibodom",
+   "lat": 40.2908394,
+   "lon": 70.4254538,
+   "kind": "city"
+  },
+  {
+   "text": "Neftabad",
+   "lat": 40.2180345,
+   "lon": 70.5700515,
+   "kind": "town"
+  },
+  {
+   "text": "Gulistan",
+   "lat": 40.2670118,
+   "lon": 69.7980606,
+   "kind": "city"
+  },
+  {
+   "text": "Nurafshan",
+   "lat": 40.2078922,
+   "lon": 70.4700205,
+   "kind": "town"
+  },
+  {
+   "text": "Ghafurov",
+   "lat": 40.221587,
+   "lon": 69.7295878,
+   "kind": "town"
+  },
+  {
+   "text": "Палос",
+   "lat": 40.3120489,
+   "lon": 69.7446154,
+   "kind": "town"
+  },
+  {
+   "text": "Syrdarya",
+   "lat": 40.2522354,
+   "lon": 69.7242325,
+   "kind": "town"
+  }
+ ],
+ "sources": {
+  "elevation": {
+   "name": "Terrain Tiles (Mapzen/Tilezen) on AWS Open Data, zoom 10; SRTM (NASA/USGS) in this region",
+   "url": "https://registry.opendata.aws/terrain-tiles/",
+   "licence": "SRTM: public domain; attribution per Tilezen",
+   "tiles": "10/710-712/385-387"
+  },
+  "outline": {
+   "name": "OpenStreetMap (lake and dam outlines, place names)",
+   "url": "https://www.openstreetmap.org/copyright",
+   "licence": "ODbL 1.0",
+   "attribution": "© OpenStreetMap contributors",
+   "lake": "relation/12608068 (Tajik Sea)",
+   "dam": "relation/15520863 (Kayrakkum Dam)",
+   "osm_base": "2026-11-14T09:30:21Z",
+   "note": "The outline shows the shore when it was mapped (date not recorded). It is drawn for orientation and not used in calculations."
+  },
+  "precipitation": {
+   "name": "NASA POWER climatology, PRECTOTCORR (MERRA-2 based)",
+   "url": "https://power.larc.nasa.gov/api/temporal/climatology/point?parameters=PRECTOTCORR&community=AG&longitude=70.1&latitude=40.3&format=JSON",
+   "retrieved_at": "2026-11-14T09:41:46Z",
+   "api_version": "v2.10.1",
+   "period": "25-year Meteorological and Solar Monthly & Annual Climatologies (January 2001 - December 2025)",
+   "point": {
+    "lat": 40.3,
+    "lon": 70.1
+   },
+   "units": "mm/day",
+   "note": "One 0.5° × 0.625° grid cell over the lake; rain on the lake only, not the catchment."
+  }
+ },
+ "precipitation_mm_per_day": [
+  0.7,
+  1.06,
+  1.1,
+  1.02,
+  0.76,
+  0.32,
+  0.11,
+  0.12,
+  0.1,
+  0.48,
+  0.93,
+  0.92
+ ],
+ "precipitation_annual_mm_per_day": 0.63,
+ "published": {
+  "citation": "Qairokkum HPP Climate Resilience Upgrade. Environmental and Social Appraisal and Action Plan (project 47253), Table 1.",
+  "url": "https://www.eib.org/attachments/registers/159697604.pdf",
+  "transcribed": "2026-11-14",
+  "full_supply_level_masl": {
+   "value": 347.5,
+   "where": "Table 1, PDF p. 4 (the same level in CAWater-Info and the 2000 dam safety report)"
+  },
+  "minimum_operating_level_masl": {
+   "value": 340.6,
+   "where": "Table 1, PDF p. 4–5"
+  },
+  "storage_table": {
+   "levels_masl": [
+    340.6,
+    347.5
+   ],
+   "volumes_hm3": [
+    0,
+    2300
+   ],
+   "where": "Table 1, PDF p. 4–5: active storage volume 2300 million m³ “acc. to 2009 survey” between the minimum operation level and the full supply level",
+   "note": "Approximate. No level–volume curve was found for this reservoir, so the change is taken as a straight line between two published levels (333 million m³ per metre). The real lake is wider near the top: this line gives too little near the full level and too much near the lowest level. A change, not the volume stored today."
+  },
+  "mean_inflow_m3s": {
+   "value": 520,
+   "where": "Kayrakkum Dam Safety Assessment Report (2000), p. 12: long-term average discharge of the river at the dam site"
+  },
+  "facts": [
+   {
+    "label": "Water surface at the full level",
+    "value": "513 km²",
+    "where": "CAWater-Info reservoir card; dam safety report (2000)",
+    "kind": "observed"
+   },
+   {
+    "label": "Length, width, greatest depth",
+    "value": "55 km, 20 km, 25 m",
+    "where": "CAWater-Info reservoir card",
+    "kind": "observed"
+   },
+   {
+    "label": "Total volume at the full level, as designed",
+    "value": "4.0–4.2 km³",
+    "where": "4,160 (CAWater-Info), 4,200 (dam safety report), 4,000 “originally” (appraisal, Table 1) million m³",
+    "kind": "observed"
+   },
+   {
+    "label": "Total volume at the full level, 2009 survey",
+    "value": "3.0 km³",
+    "where": "Appraisal, Table 1: “3000 (acc. to 2009 survey)”",
+    "kind": "observed"
+   },
+   {
+    "label": "Lost to sediment since construction",
+    "value": "about 25%",
+    "where": "GCF FP040, p. 50; about 10 million m³ per year today",
+    "kind": "observed"
+   },
+   {
+    "label": "Filling began / commissioned",
+    "value": "1956 / 1959",
+    "where": "Dam safety report (2000), section 2.1",
+    "kind": "observed"
+   },
+   {
+    "label": "Mean river flow, 2002–2005",
+    "value": "570 m³/s",
+    "where": "Appraisal, Table 1",
+    "kind": "observed"
+   }
+  ],
+  "notes": [
+   "Published volumes disagree because they refer to different years and lower levels: 4.0–4.2 km³ as designed, 3.0 km³ in the 2009 survey. They are shown side by side and never mixed in a calculation.",
+   "The lowest level is 340.6 m in the 2009-based appraisal and 342.5 m (“dead storage level”) in the 2000 dam safety report. The appraisal's value is used, together with its own storage figure.",
+   "No published evaporation figure for this reservoir was found. Evaporation is therefore an input you set yourself (0 by default), not data.",
+   "None of the documents states which height system its levels use."
+  ],
+  "references": [
+   {
+    "citation": "CAWater-Info (SIC ICWC), reservoir card “Bakhri Tojik reservoir”, https://www.cawater-info.net/bk/1-1-1-1-3-tj_e.htm",
+    "url": "https://www.cawater-info.net/bk/1-1-1-1-3-tj_e.htm"
+   },
+   {
+    "citation": "GIBB Ltd for IFAS / GEF (March 2000). Kayrakkum Dam Safety Assessment Report, https://www.cawater-info.net/bk/dam-safety/files/kayrakkum-dam-en.pdf",
+    "url": "https://www.cawater-info.net/bk/dam-safety/files/kayrakkum-dam-en.pdf"
+   },
+   {
+    "citation": "Green Climate Fund funding proposal FP040, p. 50, https://ewsdata.rightsindevelopment.org/files/documents/40/GCF-FP040.pdf",
+    "url": "https://ewsdata.rightsindevelopment.org/files/documents/40/GCF-FP040.pdf"
+   }
+  ]
+ }
+}

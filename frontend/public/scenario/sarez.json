@@ -1,0 +1,689 @@
+{
+ "id": "sarez",
+ "name": "Lake Sarez, Pamir, Tajikistan",
+ "grid": {
+  "zoom": 10,
+  "x0": 183864,
+  "y0": 100699,
+  "width": 635,
+  "height": 372,
+  "units": "m",
+  "dtype": "int16le",
+  "projection": "Web Mercator pixel grid (cell centres at x0+j+0.5, y0+i+0.5 global pixels)",
+  "approx_cell_m": 120.1,
+  "sha256": "ac7da92f4a661bd56df93df0e856775062fffae4927fe1ed2878ff2d247b3f1f",
+  "bytes": 472440
+ },
+ "dem_water": {
+  "level_m": 3264,
+  "seed": [
+   227,
+   171
+  ],
+  "flat_cells": 1347,
+  "area_km2": 68.92,
+  "touches_edge": false,
+  "noise_m": 2,
+  "flattened_cells": 1936,
+  "note": "Flat water surface recorded in the elevation data (SRTM, February 2000). Vertical datum EGM96; published levels use the national (Baltic) height system, so offsets of the order of a metre are possible."
+ },
+ "masks": {
+  "file": "sarez_mask.bin",
+  "bytes": 236220,
+  "sha256": "9ea766cc4cae07b751b70e308c1de9510b7921600604ebf85dbe62f467d981f5",
+  "bits": {
+   "1": "inside the lake outline of OpenStreetMap",
+   "2": "dam body: cannot be flooded or crossed"
+  },
+  "osm_lake_area_km2": 89.78,
+  "barrier_cells": 451
+ },
+ "dam": {
+  "lat": 38.26848,
+  "lon": 72.5927,
+  "name": "Usoi Dam (natural landslide dam, 1911)",
+  "note": "Cells of the dam body (OpenStreetMap outline, widened by 0.5 cells, above the water) cannot be flooded or crossed."
+ },
+ "labels": [
+  {
+   "text": "Usoi Dam (natural landslide dam, 1911)",
+   "lat": 38.26848,
+   "lon": 72.5927,
+   "kind": "dam"
+  },
+  {
+   "text": "M 7.2 earthquake, 1911",
+   "lat": 38.289,
+   "lon": 72.596,
+   "kind": "quake"
+  },
+  {
+   "text": "M 7.2 earthquake, 2015",
+   "lat": 38.2107,
+   "lon": 72.7797,
+   "kind": "quake"
+  }
+ ],
+ "sources": {
+  "elevation": {
+   "name": "Terrain Tiles (Mapzen/Tilezen) on AWS Open Data, zoom 10; SRTM (NASA/USGS) in this region",
+   "url": "https://registry.opendata.aws/terrain-tiles/",
+   "licence": "SRTM: public domain; attribution per Tilezen",
+   "tiles": "10/718-720/393-394"
+  },
+  "outline": {
+   "name": "OpenStreetMap (lake and dam outlines, place names)",
+   "url": "https://www.openstreetmap.org/copyright",
+   "licence": "ODbL 1.0",
+   "attribution": "© OpenStreetMap contributors",
+   "lake": "relation/1164875 (Sarez Lake)",
+   "dam": "relation/17406694 (Usoy Dam)",
+   "osm_base": "2026-11-14T09:29:18Z",
+   "note": "The outline shows the shore when it was mapped (date not recorded). It is drawn for orientation and not used in calculations."
+  },
+  "precipitation": {
+   "name": "NASA POWER climatology, PRECTOTCORR (MERRA-2 based)",
+   "url": "https://power.larc.nasa.gov/api/temporal/climatology/point?parameters=PRECTOTCORR&community=AG&longitude=72.85&latitude=38.22&format=JSON",
+   "retrieved_at": "2026-11-14T09:41:48Z",
+   "api_version": "v2.10.1",
+   "period": "25-year Meteorological and Solar Monthly & Annual Climatologies (January 2001 - December 2025)",
+   "point": {
+    "lat": 38.22,
+    "lon": 72.85
+   },
+   "units": "mm/day",
+   "note": "One 0.5° × 0.625° grid cell over the lake; rain on the lake only, not the catchment."
+  }
+ },
+ "precipitation_mm_per_day": [
+  0.36,
+  0.38,
+  0.43,
+  0.54,
+  0.29,
+  0.18,
+  0.12,
+  0.08,
+  0.05,
+  0.14,
+  0.3,
+  0.3
+ ],
+ "precipitation_annual_mm_per_day": 0.26,
+ "published": {
+  "facts": [
+   {
+    "label": "Earthquake that released the landslide",
+    "value": "18 February 1911, magnitude 7.2",
+    "where": "USGS earthquake catalog, event iscgem16958134 (ISC-GEM, Mw 7.23)",
+    "kind": "observed"
+   },
+   {
+    "label": "Rock that fell",
+    "value": "about 2 km³",
+    "where": "Schuster & Alford (2004), abstract; 2–2.5 km³ in the UN report (2000)",
+    "kind": "observed"
+   },
+   {
+    "label": "Height of the natural dam",
+    "value": "about 600 m",
+    "where": "Schuster & Alford (2004): “the highest dam, natural or man-made, in the world”",
+    "kind": "observed"
+   },
+   {
+    "label": "Lake length, greatest depth, volume",
+    "value": "60 km, 550 m, about 17 km³",
+    "where": "Schuster & Alford (2004), abstract. Historical reference estimates, not a current measurement",
+    "kind": "observed"
+   },
+   {
+    "label": "Lake surface elevation",
+    "value": "3265 m (1999); 3260–3265 m (2007)",
+    "where": "UN report (2000), chapter 3; World Bank completion report (2007), p. 11",
+    "kind": "observed"
+   },
+   {
+    "label": "Lowest part of the dam above the lake",
+    "value": "about 50 m",
+    "where": "Schuster & Alford (2004), abstract",
+    "kind": "observed"
+   },
+   {
+    "label": "Long-term rise of the lake",
+    "value": "18.5 cm per year",
+    "where": "Schuster & Alford (2004), abstract",
+    "kind": "observed"
+   },
+   {
+    "label": "Level change within a year",
+    "value": "about ± 6 m",
+    "where": "UN report (2000), chapter 4: “reported to be ± 6 m”",
+    "kind": "observed"
+   },
+   {
+    "label": "Water leaving through the dam (seepage)",
+    "value": "45 m³/s on average",
+    "where": "UN report (2000), chapter 4: measured since 1943, yearly range 35–80 m³/s",
+    "kind": "observed"
+   },
+   {
+    "label": "Monitoring and early-warning system",
+    "value": "installed December 2004",
+    "where": "World Bank completion report (2007), p. 25",
+    "kind": "observed"
+   }
+  ],
+  "notes": [
+   "No open bathymetry and no level–volume or level–area curve of Lake Sarez was found. The 17 km³ and 550 m are historical reference estimates from the literature; they are shown as such and not used in any calculation.",
+   "The lake surface in the elevation data (February 2000) is 3264 m with radar noise of about ± 2 m; the noise was flattened to one level. The published 3265 m (1999) uses a different height system.",
+   "Only raising the level is offered, and only a little: below the recorded surface the lake bed is unknown, and the natural dam's lowest point is about 50 m above the lake.",
+   "This scene does not simulate a failure of the dam, a flood wave or any hazard downstream. That needs dedicated hydraulic and geotechnical models."
+  ],
+  "references": [
+   {
+    "citation": "Schuster, R.L. & Alford, D. (2004). Usoi Landslide Dam and Lake Sarez, Pamir Mountains, Tajikistan. Environmental & Engineering Geoscience 10(2), 151–168 (abstract), https://www.usgs.gov/node/112371",
+    "url": "https://www.usgs.gov/node/112371"
+   },
+   {
+    "citation": "Alford, D. & Schuster, R.L. (eds.) (2000). Usoi Landslide Dam and Lake Sarez: an assessment of hazard and risk in the Pamir Mountains, Tajikistan. UN ISDR, https://www.eird.org/deslizamientos/pdf/eng/doc13369/doc13369.htm",
+    "url": "https://www.eird.org/deslizamientos/pdf/eng/doc13369/doc13369.htm"
+   },
+   {
+    "citation": "World Bank (2007). Lake Sarez Risk Mitigation Project, Implementation Completion Report ICR0000363, https://documents.worldbank.org/curated/en/194071468303546078/pdf/ICR363.pdf",
+    "url": "https://documents.worldbank.org/curated/en/194071468303546078/pdf/ICR363.pdf"
+   },
+   {
+    "citation": "NASA Earth Observatory (2002). Lake Sarez, Tajikistan, https://science.nasa.gov/earth/earth-observatory/lake-sarez-tajikistan-2077/",
+    "url": "https://science.nasa.gov/earth/earth-observatory/lake-sarez-tajikistan-2077/"
+   }
+  ]
+ },
+ "earthquakes": {
+  "source": "USGS Earthquake Hazards Program, ANSS Comprehensive Catalog (ComCat)",
+  "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=1900-01-01&endtime=2026-11-01&minmagnitude=5.5&minlatitude=37.3&maxlatitude=39.3&minlongitude=71.3&maxlongitude=74.3&orderby=time-asc",
+  "retrieved_at": "2026-11-14T09:41:48Z",
+  "events": [
+   {
+    "id": "iscgemsup16957980",
+    "time": "1907-12-25T22:35:47Z",
+    "mag": 6.6,
+    "mag_type": "ms",
+    "place": "43 km NE of Khorugh, Tajikistan",
+    "lon": 71.937,
+    "lat": 37.737,
+    "depth_km": 105
+   },
+   {
+    "id": "iscgemsup16958002",
+    "time": "1908-10-23T20:14:02Z",
+    "mag": 6.9,
+    "mag_type": "mB",
+    "place": "127 km E of Khorugh, Tajikistan",
+    "lon": 73.019,
+    "lat": 37.557,
+    "depth_km": 220
+   },
+   {
+    "id": "iscgem16958134",
+    "time": "1911-02-18T18:41:09Z",
+    "mag": 7.23,
+    "mag_type": "mw",
+    "place": "120 km W of Murghob, Tajikistan",
+    "lon": 72.596,
+    "lat": 38.289,
+    "depth_km": 15
+   },
+   {
+    "id": "iscgem913358",
+    "time": "1918-12-01T02:35:19Z",
+    "mag": 6.64,
+    "mag_type": "mw",
+    "place": "107 km WNW of Murghob, Tajikistan",
+    "lon": 72.767,
+    "lat": 38.389,
+    "depth_km": 20
+   },
+   {
+    "id": "iscgem912115",
+    "time": "1922-12-17T00:51:02Z",
+    "mag": 6.4,
+    "mag_type": "mw",
+    "place": "64 km NNW of Khorugh, Tajikistan",
+    "lon": 71.312,
+    "lat": 38.043,
+    "depth_km": 10
+   },
+   {
+    "id": "iscgem907190",
+    "time": "1930-01-07T17:27:37Z",
+    "mag": 5.65,
+    "mag_type": "mw",
+    "place": "11 km ESE of Karakenja, Tajikistan",
+    "lon": 71.641,
+    "lat": 39.185,
+    "depth_km": 15
+   },
+   {
+    "id": "iscgem905155",
+    "time": "1934-09-08T06:45:02Z",
+    "mag": 5.56,
+    "mag_type": "mw",
+    "place": "54 km S of Karakenja, Tajikistan",
+    "lon": 71.439,
+    "lat": 38.749,
+    "depth_km": 15
+   },
+   {
+    "id": "iscgem904019",
+    "time": "1935-01-04T10:22:13Z",
+    "mag": 5.75,
+    "mag_type": "mw",
+    "place": "47 km S of Karakenja, Tajikistan",
+    "lon": 71.463,
+    "lat": 38.815,
+    "depth_km": 15
+   },
+   {
+    "id": "iscgem901517",
+    "time": "1940-08-01T19:44:59Z",
+    "mag": 5.81,
+    "mag_type": "mw",
+    "place": "78 km NNE of Khand?d, Afghanistan",
+    "lon": 72.502,
+    "lat": 37.643,
+    "depth_km": 15
+   },
+   {
+    "id": "iscgem898074",
+    "time": "1947-10-14T22:29:28Z",
+    "mag": 5.67,
+    "mag_type": "mw",
+    "place": "63 km W of Murghob, Tajikistan",
+    "lon": 73.252,
+    "lat": 38.284,
+    "depth_km": 15
+   },
+   {
+    "id": "iscgem896651",
+    "time": "1949-07-10T14:13:25Z",
+    "mag": 5.69,
+    "mag_type": "mw",
+    "place": "30 km SSW of Karakenja, Tajikistan",
+    "lon": 71.348,
+    "lat": 39.001,
+    "depth_km": 20
+   },
+   {
+    "id": "iscgem896091",
+    "time": "1950-11-19T21:34:59Z",
+    "mag": 5.56,
+    "mag_type": "mw",
+    "place": "86 km SSE of Karakenja, Tajikistan",
+    "lon": 71.91,
+    "lat": 38.518,
+    "depth_km": 15
+   },
+   {
+    "id": "iscgem894259",
+    "time": "1951-04-14T04:10:08Z",
+    "mag": 6.08,
+    "mag_type": "mw",
+    "place": "17 km SSE of Karakenja, Tajikistan",
+    "lon": 71.592,
+    "lat": 39.089,
+    "depth_km": 15
+   },
+   {
+    "id": "iscgem890273",
+    "time": "1954-01-23T16:06:33Z",
+    "mag": 5.9,
+    "mag_type": "mw",
+    "place": "43 km NNE of Khand?d, Afghanistan",
+    "lon": 72.415,
+    "lat": 37.332,
+    "depth_km": 15
+   },
+   {
+    "id": "iscgem890274",
+    "time": "1954-01-23T17:12:00Z",
+    "mag": 5.65,
+    "mag_type": "mw",
+    "place": "47 km N of Khand?d, Afghanistan",
+    "lon": 72.365,
+    "lat": 37.381,
+    "depth_km": 15
+   },
+   {
+    "id": "iscgem889289",
+    "time": "1955-03-06T20:55:28Z",
+    "mag": 6.33,
+    "mag_type": "mw",
+    "place": "104 km W of Murghob, Tajikistan",
+    "lon": 72.784,
+    "lat": 38.096,
+    "depth_km": 124.9
+   },
+   {
+    "id": "iscgem873305",
+    "time": "1963-10-16T15:43:04Z",
+    "mag": 6.47,
+    "mag_type": "mw",
+    "place": "82 km NW of Murghob, Tajikistan",
+    "lon": 73.337,
+    "lat": 38.722,
+    "depth_km": 35
+   },
+   {
+    "id": "iscgem859164",
+    "time": "1965-02-02T15:56:52Z",
+    "mag": 6.11,
+    "mag_type": "mw",
+    "place": "98 km SW of Murghob, Tajikistan",
+    "lon": 73.23,
+    "lat": 37.503,
+    "depth_km": 21.1
+   },
+   {
+    "id": "iscgem857638",
+    "time": "1965-04-10T14:11:21Z",
+    "mag": 5.63,
+    "mag_type": "mw",
+    "place": "97 km SW of Murghob, Tajikistan",
+    "lon": 73.142,
+    "lat": 37.581,
+    "depth_km": 15
+   },
+   {
+    "id": "iscgem835571",
+    "time": "1967-05-14T09:00:54Z",
+    "mag": 5.57,
+    "mag_type": "mw",
+    "place": "117 km SSE of Gul’cha, Kyrgyzstan",
+    "lon": 73.814,
+    "lat": 39.291,
+    "depth_km": 15
+   },
+   {
+    "id": "iscgem817427",
+    "time": "1968-09-27T10:37:56Z",
+    "mag": 5.53,
+    "mag_type": "mw",
+    "place": "76 km NE of Khorugh, Tajikistan",
+    "lon": 72.265,
+    "lat": 37.876,
+    "depth_km": 112.3
+   },
+   {
+    "id": "iscgem816100",
+    "time": "1968-10-19T09:52:01Z",
+    "mag": 5.64,
+    "mag_type": "mw",
+    "place": "96 km SW of Murghob, Tajikistan",
+    "lon": 73.287,
+    "lat": 37.492,
+    "depth_km": 10
+   },
+   {
+    "id": "iscgem767290",
+    "time": "1972-11-12T17:56:54Z",
+    "mag": 6.2,
+    "mag_type": "mw",
+    "place": "73 km WNW of Murghob, Tajikistan",
+    "lon": 73.171,
+    "lat": 38.373,
+    "depth_km": 113.5
+   },
+   {
+    "id": "usp000000q",
+    "time": "1973-01-03T14:31:04Z",
+    "mag": 5.5,
+    "mag_type": "mb",
+    "place": "Kyrgyzstan-Tajikistan border region",
+    "lon": 71.889,
+    "lat": 39.114,
+    "depth_km": 33
+   },
+   {
+    "id": "usp0000aja",
+    "time": "1975-04-09T22:25:28Z",
+    "mag": 5.5,
+    "mag_type": "mb",
+    "place": "112 km W of Murghob, Tajikistan",
+    "lon": 72.692,
+    "lat": 38.073,
+    "depth_km": 78
+   },
+   {
+    "id": "usp0000hkk",
+    "time": "1976-07-28T18:24:28Z",
+    "mag": 6.1,
+    "mag_type": "ms",
+    "place": "53 km SE of Kyzyl-Eshme, Kyrgyzstan",
+    "lon": 72.79,
+    "lat": 39.295,
+    "depth_km": 50
+   },
+   {
+    "id": "usp0001k07",
+    "time": "1982-03-07T12:24:01Z",
+    "mag": 5.5,
+    "mag_type": "mb",
+    "place": "112 km W of Murghob, Tajikistan",
+    "lon": 72.695,
+    "lat": 38.009,
+    "depth_km": 122
+   },
+   {
+    "id": "usp00028hw",
+    "time": "1984-10-26T20:22:21Z",
+    "mag": 6.1,
+    "mag_type": "mw",
+    "place": "19 km WSW of Karakenja, Tajikistan",
+    "lon": 71.328,
+    "lat": 39.155,
+    "depth_km": 33
+   },
+   {
+    "id": "usp0002e6y",
+    "time": "1985-04-27T01:31:27Z",
+    "mag": 5.6,
+    "mag_type": "mw",
+    "place": "84 km NW of Murghob, Tajikistan",
+    "lon": 73.173,
+    "lat": 38.599,
+    "depth_km": 104
+   },
+   {
+    "id": "usp0003ec7",
+    "time": "1988-03-26T22:58:42Z",
+    "mag": 5.5,
+    "mag_type": "mw",
+    "place": "65 km WNW of Murghob, Tajikistan",
+    "lon": 73.234,
+    "lat": 38.309,
+    "depth_km": 120.9
+   },
+   {
+    "id": "usp0005h9b",
+    "time": "1992-11-23T23:11:06Z",
+    "mag": 5.6,
+    "mag_type": "mw",
+    "place": "109 km SSE of Kyzyl-Eshme, Kyrgyzstan",
+    "lon": 72.635,
+    "lat": 38.62,
+    "depth_km": 40.6
+   },
+   {
+    "id": "usp0005htj",
+    "time": "1992-12-04T11:36:36Z",
+    "mag": 5.8,
+    "mag_type": "mw",
+    "place": "67 km ENE of Khorugh, Tajikistan",
+    "lon": 72.194,
+    "lat": 37.814,
+    "depth_km": 120.1
+   },
+   {
+    "id": "usp0005hvv",
+    "time": "1992-12-06T03:44:29Z",
+    "mag": 5.5,
+    "mag_type": "mb",
+    "place": "66 km ENE of Khorugh, Tajikistan",
+    "lon": 72.185,
+    "lat": 37.81,
+    "depth_km": 127.5
+   },
+   {
+    "id": "usp0009s69",
+    "time": "2000-05-01T18:41:41Z",
+    "mag": 5.6,
+    "mag_type": "mwc",
+    "place": "80 km W of Murghob, Tajikistan",
+    "lon": 73.053,
+    "lat": 38.176,
+    "depth_km": 140.5
+   },
+   {
+    "id": "usp000angm",
+    "time": "2001-09-02T16:58:01Z",
+    "mag": 5.5,
+    "mag_type": "mwc",
+    "place": "72 km SE of Karakenja, Tajikistan",
+    "lon": 72.154,
+    "lat": 38.804,
+    "depth_km": 33
+   },
+   {
+    "id": "usp000b2c0",
+    "time": "2002-04-14T02:04:21Z",
+    "mag": 5.5,
+    "mag_type": "mwc",
+    "place": "63 km NW of Murghob, Tajikistan",
+    "lon": 73.405,
+    "lat": 38.531,
+    "depth_km": 117.5
+   },
+   {
+    "id": "usp000d8nw",
+    "time": "2004-11-17T20:58:22Z",
+    "mag": 5.8,
+    "mag_type": "mwc",
+    "place": "29 km E of Karakenja, Tajikistan",
+    "lon": 71.857,
+    "lat": 39.189,
+    "depth_km": 20
+   },
+   {
+    "id": "usp000dgyx",
+    "time": "2005-02-25T23:04:04Z",
+    "mag": 5.7,
+    "mag_type": "mwb",
+    "place": "110 km W of Murghob, Tajikistan",
+    "lon": 72.707,
+    "lat": 38.107,
+    "depth_km": 114.9
+   },
+   {
+    "id": "usp000emz5",
+    "time": "2006-07-06T03:57:50Z",
+    "mag": 5.8,
+    "mag_type": "mwc",
+    "place": "29 km ESE of Karakenja, Tajikistan",
+    "lon": 71.836,
+    "lat": 39.119,
+    "depth_km": 7
+   },
+   {
+    "id": "usp000fs1e",
+    "time": "2007-11-06T02:15:46Z",
+    "mag": 5.5,
+    "mag_type": "mwc",
+    "place": "Tajikistan-Xinjiang border region",
+    "lon": 73.264,
+    "lat": 38.155,
+    "depth_km": 131.3
+   },
+   {
+    "id": "usp000htk2",
+    "time": "2011-01-24T02:45:31Z",
+    "mag": 6,
+    "mag_type": "mww",
+    "place": "106 km WNW of Murghob, Tajikistan",
+    "lon": 72.791,
+    "lat": 38.413,
+    "depth_km": 110
+   },
+   {
+    "id": "us100044k6",
+    "time": "2015-12-07T07:50:05Z",
+    "mag": 7.2,
+    "mag_type": "mww",
+    "place": "104 km W of Murghob, Tajikistan",
+    "lon": 72.7797,
+    "lat": 38.2107,
+    "depth_km": 22
+   },
+   {
+    "id": "us20005ate",
+    "time": "2016-03-18T16:11:00Z",
+    "mag": 5.6,
+    "mag_type": "mww",
+    "place": "96 km NE of Khorugh, Tajikistan",
+    "lon": 72.4114,
+    "lat": 38.0233,
+    "depth_km": 10
+   },
+   {
+    "id": "us10007ca5",
+    "time": "2016-11-25T14:24:30Z",
+    "mag": 6.6,
+    "mag_type": "mww",
+    "place": "122 km N of Murghob, Tajikistan",
+    "lon": 73.9776,
+    "lat": 39.2732,
+    "depth_km": 17
+   },
+   {
+    "id": "us60007ei6",
+    "time": "2020-01-24T07:09:15Z",
+    "mag": 5.5,
+    "mag_type": "mww",
+    "place": "7 km S of Karakenja, Tajikistan",
+    "lon": 71.5082,
+    "lat": 39.1651,
+    "depth_km": 10
+   },
+   {
+    "id": "us6000ack0",
+    "time": "2020-06-16T01:30:48Z",
+    "mag": 5.6,
+    "mag_type": "mww",
+    "place": "68 km ENE of Khorugh, Tajikistan",
+    "lon": 72.2035,
+    "lat": 37.8342,
+    "depth_km": 127
+   },
+   {
+    "id": "us6000dh48",
+    "time": "2021-02-12T17:01:35Z",
+    "mag": 5.9,
+    "mag_type": "mww",
+    "place": "Tajikistan-Xinjiang border region",
+    "lon": 73.5448,
+    "lat": 38.1357,
+    "depth_km": 98
+   },
+   {
+    "id": "us6000jqxc",
+    "time": "2023-02-23T00:37:38Z",
+    "mag": 6.9,
+    "mag_type": "mww",
+    "place": "65 km WSW of Murghob, Tajikistan",
+    "lon": 73.2287,
+    "lat": 38.0552,
+    "depth_km": 9
+   }
+  ],
+  "note": "Magnitudes are of mixed types (mw, ms, mb …) as given by the catalog; early events come from the ISC-GEM catalogue."
+ }
+}

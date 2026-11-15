@@ -1,0 +1,52 @@
+{
+  "label": "before-1mbps",
+  "url": "http://localhost:4173/",
+  "throttled": true,
+  "date": "2026-11-05T14:15:31.147Z",
+  "loadEventMs": 11201,
+  "firstGlobeMs": 37205,
+  "initial": {
+    "requests": 56,
+    "bytes": 2870502,
+    "byHost": {
+      "localhost:4173": {
+        "requests": 19,
+        "bytes": 2380485,
+        "failed": 0
+      },
+      "": {
+        "requests": 1,
+        "bytes": 0,
+        "failed": 0
+      },
+      "gibs.earthdata.nasa.gov": {
+        "requests": 36,
+        "bytes": 490017,
+        "failed": 0
+      }
+    }
+  },
+  "initialJsBytes": 1311889,
+  "memoryAfterLoad": {
+    "jsHeapUsedMB": 16.9,
+    "jsHeapTotalMB": 20.1
+  },
+  "navigation": {
+    "frames": 15,
+    "seconds": 8.499400000005961,
+    "fps": 1.8,
+    "requests": 0,
+    "bytes": 0,
+    "byHost": {}
+  },
+  "memoryAfterNavigate": {
+    "jsHeapUsedMB": 17.3,
+    "jsHeapTotalMB": 19.3
+  },
+  "idle": {
+    "requests": 0,
+    "bytes": 0,
+    "byHost": {}
+  },
+  "consoleErrors": []
+}

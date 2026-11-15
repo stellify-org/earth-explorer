@@ -1,0 +1,28 @@
+# local tooling
+.idea/
+.vscode/
+*.log
+.env
+
+# python
+science/.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# runtime caches (API responses, survive restarts; never commit)
+data/cache/
+
+# frontend
+frontend/node_modules/
+frontend/dist/
+frontend/public/cesium/
+
+# go
+backend/bin/
+.gstack/
+frontend/tsconfig.tsbuildinfo
+data/grids/
+
+# CRUST1.0 converted locally by science/geo/build_crust1.py (no explicit redistribution licence)
+frontend/public/crust1/

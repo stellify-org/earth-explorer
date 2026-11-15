@@ -1,0 +1,26 @@
+services:
+  api:
+    build: ./backend
+    environment:
+      PORT: "8787"
+      CACHE_DIR: /data/cache
+      GRIDS_DIR: /data/grids
+      LOG_LEVEL: ${LOG_LEVEL:-info}
+    volumes:
+      - api-cache:/data/cache
+      - ./data/grids:/data/grids:ro
+    restart: unless-stopped
+    mem_limit: 256m
+
+  web:
+    build: ./frontend
+    ports:
+      - "${WEB_PORT:-8088}:80"
+    depends_on:
+      api:
+        condition: service_healthy
+    restart: unless-stopped
+    mem_limit: 128m
+
+volumes:
+  api-cache:

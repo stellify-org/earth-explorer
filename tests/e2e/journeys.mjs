@@ -1,10 +1,10 @@
 // The four user journeys of the simple interface, on a desktop and a phone viewport.
-//   node tests/e2e/journeys.mjs http://localhost:8088/     (needs Playwright; NASA POWER must be reachable for the trend)
+//   node tests/e2e/journeys.mjs http://localhost:8080/     (needs Playwright; NASA POWER must be reachable for the trend)
 //   SHOTS=/some/dir saves a screenshot of every stage.
 import assert from "node:assert/strict";
 import { createRequire } from "node:module"; import { homedir } from "node:os"; import { join } from "node:path";
 const { chromium } = createRequire(join(process.env.PLAYWRIGHT_DIR ?? join(homedir(), ".claude/skills/gstack/browse"), "package.json"))("playwright");
-const url = process.argv[2] ?? "http://localhost:8088/";
+const url = process.argv[2] ?? "http://localhost:8080/";
 const b = await chromium.launch({ args: ["--enable-unsafe-swiftshader"] });
 const errs = [];
 try {

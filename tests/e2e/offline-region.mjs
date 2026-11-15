@@ -1,5 +1,5 @@
 // Regional offline pack: with the grid API unreachable, a stored regional pack frame must still be shown.
-//   node tests/e2e/offline-region.mjs http://localhost:8088/   (needs Playwright; PLAYWRIGHT_DIR like tests/perf)
+//   node tests/e2e/offline-region.mjs http://localhost:8080/   (needs Playwright; PLAYWRIGHT_DIR like tests/perf)
 // Stores ONE verified chunk of the Tajikistan pack (the latest t2m month) in IndexedDB, blocks
 // /api/v1/vis/grid, opens the numeric temperature layer over Tajikistan and checks what is drawn.
 // PACK=tajikistan-anomalies checks the derived anomaly pack the same way (the Anomaly button is pressed).
@@ -10,7 +10,7 @@ const ctx = await b.newContext({ viewport: { width: 1440, height: 900 }, service
 const p = await ctx.newPage();
 const PACK = process.env.PACK ?? "tajikistan-native", ANOMALY = PACK.includes("anomal");
 const errs = []; p.on("pageerror", (e) => errs.push("PAGEERROR " + e.stack));
-await p.goto(process.argv[2] ?? "http://localhost:8088/"); await p.waitForTimeout(6000);
+await p.goto(process.argv[2] ?? "http://localhost:8080/"); await p.waitForTimeout(6000);
 await p.waitForSelector('[aria-label="Visualisation variable"] option[value="t2m"]', { state: "attached" });
 
 const stored = await p.evaluate(async (PACK) => {

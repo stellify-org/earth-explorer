@@ -1,5 +1,5 @@
 // Tajikistan 3D tile pack, end to end with the real service worker:
-//   node tests/e2e/offline-3d.mjs http://localhost:8088/   (needs Playwright; PLAYWRIGHT_DIR like tests/perf)
+//   node tests/e2e/offline-3d.mjs http://localhost:8080/   (needs Playwright; PLAYWRIGHT_DIR like tests/perf)
 // Downloads the pack through the UI (969 tiles, ~66 MB from AWS Open Data / NASA GIBS), goes fully offline,
 // reloads, turns the terrain on above the Pamir at a zoom deeper than the pack and checks that the relief
 // has real heights (coarser-tile fallback) and that a Blue Marble tile is served from the pack.
@@ -10,7 +10,7 @@ const ctx = await b.newContext({ viewport: { width: 1440, height: 900 } }); awai
 const p = await ctx.newPage();
 const errs = []; p.on("pageerror", (e) => errs.push("PAGEERROR " + e.stack));
 p.on("dialog", (d) => d.accept());
-const url = process.argv[2] ?? "http://localhost:8088/";
+const url = process.argv[2] ?? "http://localhost:8080/";
 await p.goto(url); await p.waitForTimeout(8000);
 await p.reload(); await p.waitForTimeout(6000);                       // now controlled by the service worker
 const controlled = await p.evaluate(() => !!navigator.serviceWorker.controller);

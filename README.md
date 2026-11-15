@@ -39,7 +39,7 @@ Without this step the app works, but the Scientific visualization panel shows no
 
 ```bash
 make up          # or: docker compose up --build -d
-# open http://localhost:8088   (Caddy serves precompressed Brotli and proxies /api)
+# open http://localhost:8080   (Caddy serves precompressed Brotli and proxies /api)
 ```
 
 Server deployment: [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md). All local commands: `make help`.
@@ -69,8 +69,8 @@ cd frontend && npm run typecheck && npm test         # TS contracts + unit tests
 python3 -m venv science/.venv && science/.venv/bin/pip install -r science/requirements.txt
 science/.venv/bin/python -I -m pytest science/tests -q   # reference reproducibility
 tests/smoke.sh                                        # live check against a running API
-node tests/e2e/mode-switch.mjs http://localhost:8088/   # regression: mode/visualisation switching (Playwright)
-node tests/perf/measure.mjs http://localhost:8088/ --throttle --offline-check --flaky   # perf + offline (needs Playwright)
+node tests/e2e/mode-switch.mjs http://localhost:8080/   # regression: mode/visualisation switching (Playwright)
+node tests/perf/measure.mjs http://localhost:8080/ --throttle --offline-check --flaky   # perf + offline (needs Playwright)
 ```
 
 What the tests prove:

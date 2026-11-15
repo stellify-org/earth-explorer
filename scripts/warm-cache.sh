@@ -5,7 +5,7 @@
 # A failed request is reported and skipped; the exit code is non-zero if any request failed.
 set -uo pipefail
 
-B="${1:-http://localhost:${WEB_PORT:-8088}/api/v1}"
+B="${1:-http://localhost:${WEB_PORT:-8080}/api/v1}"
 POINTS="${WARM_POINTS:-38.56,68.78 40.28,69.62 37.84,68.78 37.49,71.55 41.31,69.24 43.24,76.89 42.87,74.59}"
 VARS="${WARM_VARS:-t2m precip}"
 END="${WARM_END:-$(( $(date +%Y) - 1 ))}"

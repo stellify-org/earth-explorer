@@ -1,5 +1,5 @@
 SHELL := /bin/bash
-WEB_PORT ?= 8088
+WEB_PORT ?= 8080
 URL ?= http://localhost:$(WEB_PORT)/
 PY := science/.venv/bin/python
 GRID_VARS ?= t2m precip u10m v10m soilwet qv2m rh2m

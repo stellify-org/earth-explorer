@@ -3,7 +3,7 @@ set -euo pipefail
 
 cd "$(dirname "$0")/.."
 
-WEB_PORT="${WEB_PORT:-8088}"
+WEB_PORT="${WEB_PORT:-8080}"
 GRID_VARS="${GRID_VARS:-t2m precip u10m v10m soilwet qv2m rh2m}"
 PACKS_EXPECTED="${PACKS_EXPECTED:-15}"
 PY_IMAGE="${PY_IMAGE:-python:3.12-slim}"

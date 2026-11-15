@@ -12,7 +12,7 @@ import { homedir } from "node:os";
 import { join } from "node:path";
 
 const args = process.argv.slice(2);
-const url = args.find((a) => !a.startsWith("--")) ?? "http://localhost:8088/";
+const url = args.find((a) => !a.startsWith("--")) ?? "http://localhost:8080/";
 const flag = (n) => args.includes(n);
 const opt = (n, d) => { const i = args.indexOf(n); return i >= 0 ? args[i + 1] : d; };
 const label = opt("--label", "run");

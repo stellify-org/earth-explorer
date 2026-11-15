@@ -1,7 +1,7 @@
 // Earth Interior (X-Ray): the planetary cutaway opens and responds to its controls, a click on the
 // opened planet selects a layer, Crust Explorer shows CRUST1.0 values that change with the place,
 // and an A–B cross-section is produced. Needs frontend/public/crust1 (science/geo/build_crust1.py).
-//   node tests/e2e/earth-interior.mjs http://localhost:8088/     (SHOTS=<dir> also saves screenshots)
+//   node tests/e2e/earth-interior.mjs http://localhost:8080/     (SHOTS=<dir> also saves screenshots)
 import assert from "node:assert/strict";
 import { createRequire } from "node:module"; import { homedir } from "node:os"; import { join } from "node:path";
 const { chromium } = createRequire(join(process.env.PLAYWRIGHT_DIR ?? join(homedir(), ".claude/skills/gstack/browse"), "package.json"))("playwright");
@@ -13,7 +13,7 @@ try {
   const setRange = (label, v) => p.locator(`input[aria-label="${label}"]`).first().evaluate((el, v) => { Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, "value").set.call(el, String(v)); el.dispatchEvent(new Event("input", { bubbles: true })); }, v);
   const tab = (name) => p.getByRole("button", { name, exact: true }).click();
   const scene = () => p.evaluate(() => { const s = window.__ee.viewer.scene; /* shown primitives only: the hidden country-label collection stays in the scene, the globe is not rebuilt */ let shown = 0; for (let i = 0; i < s.primitives.length; i++) if (s.primitives.get(i).show) shown++; return { prims: shown, clipped: !!s.globe.clippingPlanes?.enabled && s.globe.clippingPlanes.length > 0, union: !!s.globe.clippingPlanes?.unionClippingRegions }; });
-  await p.goto(process.argv[2] ?? "http://localhost:8088/"); await p.waitForTimeout(6000);
+  await p.goto(process.argv[2] ?? "http://localhost:8080/"); await p.waitForTimeout(6000);
   await p.click('[data-testid="nav-g-discover"]'); await p.click('[data-testid="nav-xray"]');
   await p.waitForTimeout(8000);
 

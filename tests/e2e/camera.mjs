@@ -1,11 +1,11 @@
 // Camera controls with mouse, touchpad and touch screen, and "the camera never ends up under the ground":
-//   node tests/e2e/camera.mjs http://localhost:8088/        (needs Playwright; PLAYWRIGHT_DIR like tests/perf)
+//   node tests/e2e/camera.mjs http://localhost:8080/        (needs Playwright; PLAYWRIGHT_DIR like tests/perf)
 // Needs the network for terrain tiles (AWS Open Data). Headless Chromium renders in software: this checks
 // behaviour, not smoothness.
 //   SKIP=mouse,lab,touch   leave parts out;   SHOT=dir   screenshots.
 import { createRequire } from "node:module"; import { homedir } from "node:os"; import { join } from "node:path";
 const { chromium } = createRequire(join(process.env.PLAYWRIGHT_DIR ?? join(homedir(), ".claude/skills/gstack/browse"), "package.json"))("playwright");
-const url = process.argv[2] ?? "http://localhost:8088/", skip = (process.env.SKIP ?? "").split(",");
+const url = process.argv[2] ?? "http://localhost:8080/", skip = (process.env.SKIP ?? "").split(",");
 const b = await chromium.launch({ args: ["--enable-unsafe-swiftshader"] });
 const errs = [], fails = [];
 const check = (name, ok, detail) => { console.log(`${ok ? "ok  " : "FAIL"} ${name}${detail === undefined ? "" : " — " + (typeof detail === "string" ? detail : JSON.stringify(detail))}`); if (!ok) fails.push(name); };

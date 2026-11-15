@@ -374,7 +374,7 @@ def class_areas(grid, exact, px) -> dict:
 
 
 def flood_scan(days: int = 60) -> None:
-    api = json.loads(fetch(f"http://localhost:8088/api/v1/events?days={days}&category=floods", f"flood/eonet_floods_{days}_{TODAY}.json"))
+    api = json.loads(fetch(f"http://localhost:8080/api/v1/events?days={days}&category=floods", f"flood/eonet_floods_{days}_{TODAY}.json"))
     out = []
     for e in api["events"]:
         if not e.get("bbox"):

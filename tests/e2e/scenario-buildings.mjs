@@ -1,12 +1,12 @@
 // Scenario Lab — "Show Buildings": real footprints must appear in the 3D scene near the camera, be coloured from
 // the same flood mask the water is drawn from, change class with the water level, be inspectable by a click,
 // and work with the network switched off.
-//   node tests/e2e/scenario-buildings.mjs http://localhost:8088/     (needs Playwright)   SHOTS=/dir saves screenshots
+//   node tests/e2e/scenario-buildings.mjs http://localhost:8080/     (needs Playwright)   SHOTS=/dir saves screenshots
 //   SKIP_OFFLINE=1 skips the offline reload (for the Vite dev server, which has no service worker)
 import assert from "node:assert/strict";
 import { createRequire } from "node:module"; import { homedir } from "node:os"; import { join } from "node:path";
 const { chromium } = createRequire(join(process.env.PLAYWRIGHT_DIR ?? join(homedir(), ".claude/skills/gstack/browse"), "package.json"))("playwright");
-const url = process.argv[2] ?? "http://localhost:8088/";
+const url = process.argv[2] ?? "http://localhost:8080/";
 const b = await chromium.launch({ args: ["--enable-unsafe-swiftshader"] });
 try {
   const ctx = await b.newContext({ viewport: { width: 1440, height: 900 } });

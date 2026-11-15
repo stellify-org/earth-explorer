@@ -1,6 +1,6 @@
 // Production service-worker regression: pin warm geography, avoid duplicate science frames,
 // retain full pack manifests/metadata and reopen the downloaded data with no connection.
-// node tests/e2e/offline-storage.mjs http://localhost:8088/
+// node tests/e2e/offline-storage.mjs http://localhost:8080/
 import assert from "node:assert/strict";
 import { createRequire } from "node:module";
 import { homedir } from "node:os";
@@ -11,7 +11,7 @@ try {
   const ctx = await browser.newContext({ viewport: { width: 1440, height: 900 } });
   const page = await ctx.newPage(); const errors = [];
   page.on("pageerror", (e) => errors.push(e.message));
-  await page.goto(process.argv[2] ?? "http://localhost:8088/");
+  await page.goto(process.argv[2] ?? "http://localhost:8080/");
   await page.evaluate(async () => { await navigator.serviceWorker.ready; });
   await page.waitForFunction(() => !!navigator.serviceWorker.controller);
   // Warm runtime geography: downloading the pack must still create durable copies.

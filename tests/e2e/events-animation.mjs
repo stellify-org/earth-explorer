@@ -1,11 +1,11 @@
 // Event Detective — animated symbols: each kind of event has its own moving icon, the loop runs only while
 // something is animated, the switch turns it off, playback pops new events, and a click on a symbol still selects.
-//   node tests/e2e/events-animation.mjs http://localhost:8088/     (needs Playwright; NASA EONET and USGS reachable)
+//   node tests/e2e/events-animation.mjs http://localhost:8080/     (needs Playwright; NASA EONET and USGS reachable)
 //   SHOTS=/dir saves a close-up of every kind
 import assert from "node:assert/strict";
 import { createRequire } from "node:module"; import { homedir } from "node:os"; import { join } from "node:path";
 const { chromium } = createRequire(join(process.env.PLAYWRIGHT_DIR ?? join(homedir(), ".claude/skills/gstack/browse"), "package.json"))("playwright");
-const url = process.argv[2] ?? "http://localhost:8088/";
+const url = process.argv[2] ?? "http://localhost:8080/";
 const b = await chromium.launch({ args: ["--enable-unsafe-swiftshader"] });
 try {
   const ctx = await b.newContext({ viewport: { width: 1280, height: 800 }, serviceWorkers: "block" });

@@ -1,6 +1,17 @@
 services:
+  grids:
+    build: ./science/vis
+    environment:
+      GRID_VARS: ${GRID_VARS:-t2m precip u10m v10m soilwet qv2m rh2m}
+    volumes:
+      - ./data/grids:/data/grids
+    restart: "no"
+
   api:
     build: ./backend
+    depends_on:
+      grids:
+        condition: service_completed_successfully
     environment:
       PORT: "8787"
       CACHE_DIR: /data/cache
@@ -13,9 +24,12 @@ services:
     mem_limit: 256m
 
   web:
-    build: ./frontend
+    build:
+      context: ./frontend
+      additional_contexts:
+        science-geo: ./science/geo
     ports:
-      - "${WEB_PORT:-8088}:80"
+      - "${WEB_PORT:-8080}:80"
     depends_on:
       api:
         condition: service_healthy

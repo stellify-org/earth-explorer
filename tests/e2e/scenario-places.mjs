@@ -1,12 +1,12 @@
 // Scenario Lab — several places from one engine. For every place: the selector card opens it, the camera goes to the
 // right spot, the terrain is that place's, the controls move the water geometry, numbers are consistent with the
 // place's own data pack, missing data are said plainly, and it works offline after the first visit.
-//   node tests/e2e/scenario-places.mjs http://localhost:8088/     (needs Playwright)   SHOTS=/dir saves screenshots
+//   node tests/e2e/scenario-places.mjs http://localhost:8080/     (needs Playwright)   SHOTS=/dir saves screenshots
 //   SKIP_OFFLINE=1 skips the offline part (Vite dev server has no service worker)
 import assert from "node:assert/strict";
 import { createRequire } from "node:module"; import { homedir } from "node:os"; import { join } from "node:path";
 const { chromium } = createRequire(join(process.env.PLAYWRIGHT_DIR ?? join(homedir(), ".claude/skills/gstack/browse"), "package.json"))("playwright");
-const url = process.argv[2] ?? "http://localhost:8088/";
+const url = process.argv[2] ?? "http://localhost:8080/";
 const b = await chromium.launch({ args: ["--enable-unsafe-swiftshader"] });
 try {
   const ctx = await b.newContext({ viewport: { width: 1440, height: 900 } });

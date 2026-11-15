@@ -1,0 +1,78 @@
+{
+  "label": "after-1mbps",
+  "url": "http://localhost:4173/",
+  "throttled": true,
+  "date": "2026-11-05T14:37:20.430Z",
+  "loadEventMs": 11305,
+  "firstGlobeMs": 16807,
+  "initial": {
+    "requests": 24,
+    "bytes": 1445354,
+    "byHost": {
+      "localhost:4173": {
+        "requests": 23,
+        "bytes": 1445354,
+        "failed": 0
+      },
+      "": {
+        "requests": 1,
+        "bytes": 0,
+        "failed": 0
+      }
+    }
+  },
+  "initialJsBytes": 1320095,
+  "memoryAfterLoad": {
+    "jsHeapUsedMB": 25.7,
+    "jsHeapTotalMB": 37.9
+  },
+  "navigation": {
+    "frames": 17,
+    "seconds": 8.5335,
+    "fps": 2,
+    "requests": 0,
+    "bytes": 0,
+    "byHost": {}
+  },
+  "memoryAfterNavigate": {
+    "jsHeapUsedMB": 29.6,
+    "jsHeapTotalMB": 40
+  },
+  "idle": {
+    "requests": 0,
+    "bytes": 0,
+    "byHost": {}
+  },
+  "trendOnline": 0.3521965439,
+  "serviceWorker": {
+    "active": true,
+    "controlled": true,
+    "waitedMs": 0
+  },
+  "offline": {
+    "reloaded": true,
+    "firstGlobeMs": 5079,
+    "ms": 7374,
+    "appText": "Earth Explorer\nresearch prototype\nExplore\nCompare\nX-Ray\nScenario Lab\n○\nOffline: local data only\nOffline library\nData & credits\n1 · LOCATION\nGo\nExample places…\nDushanbe, Tajikistan\nPamir mountains, Tajikistan\nAral Sea region\nCentral Amazon, Brazil\nSahel, Niger\nGreenland ice sheet margin\nYakutsk, Russ",
+    "trendOffline": {
+      "slope": 0.3521965439,
+      "swCache": "Thu, 05 Nov 2026 14:37:54 GMT"
+    },
+    "status": "○Offline: local data only",
+    "requests": 24,
+    "bytes": 0,
+    "byHost": {
+      "localhost:4173": {
+        "requests": 23,
+        "bytes": 0,
+        "failed": 0
+      },
+      "": {
+        "requests": 1,
+        "bytes": 0,
+        "failed": 0
+      }
+    }
+  },
+  "consoleErrors": []
+}

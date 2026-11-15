@@ -1,0 +1,68 @@
+{
+  "label": "before-fast",
+  "url": "http://localhost:4173/",
+  "throttled": false,
+  "date": "2026-11-05T14:14:49.486Z",
+  "loadEventMs": 519,
+  "firstGlobeMs": 13795,
+  "initial": {
+    "requests": 56,
+    "bytes": 2859888,
+    "byHost": {
+      "localhost:4173": {
+        "requests": 19,
+        "bytes": 2380492,
+        "failed": 0
+      },
+      "": {
+        "requests": 1,
+        "bytes": 0,
+        "failed": 0
+      },
+      "gibs.earthdata.nasa.gov": {
+        "requests": 36,
+        "bytes": 479396,
+        "failed": 0
+      }
+    }
+  },
+  "initialJsBytes": 1311889,
+  "memoryAfterLoad": {
+    "jsHeapUsedMB": 17.2,
+    "jsHeapTotalMB": 20.6
+  },
+  "navigation": {
+    "frames": 14,
+    "seconds": 8.276199999988078,
+    "fps": 1.7,
+    "requests": 0,
+    "bytes": 0,
+    "byHost": {}
+  },
+  "memoryAfterNavigate": {
+    "jsHeapUsedMB": 17.5,
+    "jsHeapTotalMB": 20.8
+  },
+  "idle": {
+    "requests": 0,
+    "bytes": 0,
+    "byHost": {}
+  },
+  "offlineReloadError": "Error: page.reload: net::ERR_INTERNET_DISCONNECTED\nCall log:\n\u001b[2m  - waiting for navigation until \"load\"\u001b[22m\n",
+  "offline": {
+    "reloaded": false,
+    "firstGlobeMs": null,
+    "ms": 162,
+    "appText": "",
+    "requests": 1,
+    "bytes": 0,
+    "byHost": {
+      "localhost:4173": {
+        "requests": 1,
+        "bytes": 0,
+        "failed": 1
+      }
+    }
+  },
+  "consoleErrors": []
+}

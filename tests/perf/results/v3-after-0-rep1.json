@@ -1,0 +1,98 @@
+{
+  "label": "after-0-rep1",
+  "url": "http://localhost:8088/",
+  "mbps": "unthrottled",
+  "date": "2026-11-08T16:11:42.423Z",
+  "loadEventMs": 304,
+  "firstGlobeMs": 6276,
+  "initial": {
+    "requests": 21,
+    "bytes": 996627,
+    "byHost": {
+      "localhost:8088": {
+        "requests": 20,
+        "bytes": 996627,
+        "failed": 0
+      },
+      "": {
+        "requests": 1,
+        "bytes": 0,
+        "failed": 0
+      }
+    }
+  },
+  "initialJsBytes": 873877,
+  "memoryAfterLoad": {
+    "jsHeapUsedMB": 17.4,
+    "jsHeapTotalMB": 35.5
+  },
+  "navigation": {
+    "frames": 14,
+    "seconds": 8.537399999976158,
+    "fps": 1.6,
+    "requests": 0,
+    "bytes": 0,
+    "byHost": {}
+  },
+  "memoryAfterNavigate": {
+    "jsHeapUsedMB": 20.3,
+    "jsHeapTotalMB": 35.5
+  },
+  "idle": {
+    "requests": 0,
+    "bytes": 0,
+    "byHost": {}
+  },
+  "visTiming": {
+    "uncachedFirstMs": 1941,
+    "uncachedNextMonthMs": 1694,
+    "cachedRevisitMs": 788,
+    "requests": {
+      "requests": 6,
+      "bytes": 0,
+      "byHost": {
+        "localhost:8088": {
+          "requests": 6,
+          "bytes": 0,
+          "failed": 0
+        }
+      }
+    }
+  },
+  "trendOnline": 0.3521965439,
+  "serviceWorker": {
+    "active": true,
+    "controlled": true,
+    "waitedMs": 0
+  },
+  "offline": {
+    "reloaded": true,
+    "firstGlobeMs": 4131,
+    "ms": 4766,
+    "appText": "Earth Explorer\nresearch prototype\nExplore\nCompare\nX-Ray\nScenario Lab\n○\nOffline: local data only\nLow bandwidth: auto (off)\nOffline data\nData & credits\n1 · LOCATION\nGo\nExample places…\nDushanbe, Tajikistan\nPamir mountains, Tajikistan\nAral Sea region\nCentral Amazon, Brazil\nSahel, Niger\nGreenland ice she",
+    "trendOffline": {
+      "slope": 0.3521965439,
+      "swCache": "Sun, 08 Nov 2026 16:12:11 GMT"
+    },
+    "status": "○Offline: local data only",
+    "requests": 21,
+    "bytes": 0,
+    "byHost": {
+      "localhost:8088": {
+        "requests": 20,
+        "bytes": 0,
+        "failed": 0
+      },
+      "": {
+        "requests": 1,
+        "bytes": 0,
+        "failed": 0
+      }
+    }
+  },
+  "storage": {
+    "usageMB": 10.76,
+    "quotaMB": 980
+  },
+  "consoleErrors": []
+}

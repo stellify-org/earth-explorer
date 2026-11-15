@@ -1,0 +1,96 @@
+{
+  "label": "vis-offline",
+  "url": "http://localhost:4173/",
+  "throttled": false,
+  "date": "2026-11-05T16:14:58.601Z",
+  "loadEventMs": 783,
+  "firstGlobeMs": 6823,
+  "initial": {
+    "requests": 25,
+    "bytes": 1752397,
+    "byHost": {
+      "localhost:4173": {
+        "requests": 24,
+        "bytes": 1752397,
+        "failed": 0
+      },
+      "": {
+        "requests": 1,
+        "bytes": 0,
+        "failed": 0
+      }
+    }
+  },
+  "initialJsBytes": 1326350,
+  "memoryAfterLoad": {
+    "jsHeapUsedMB": 26.2,
+    "jsHeapTotalMB": 37.9
+  },
+  "navigation": {
+    "frames": 15,
+    "seconds": 8.14390000000596,
+    "fps": 1.8,
+    "requests": 0,
+    "bytes": 0,
+    "byHost": {}
+  },
+  "memoryAfterNavigate": {
+    "jsHeapUsedMB": 29.9,
+    "jsHeapTotalMB": 40
+  },
+  "idle": {
+    "requests": 0,
+    "bytes": 0,
+    "byHost": {}
+  },
+  "vis": {
+    "months": 24,
+    "allShown": true,
+    "medianUpdateMs": 1113,
+    "gridRequests": 27,
+    "gridBytes": 0,
+    "bytesPerFrame": 0,
+    "heapBeforeMB": 25.5,
+    "heapAfterMB": 22.9,
+    "repeatGridRequests": 1,
+    "repeatNetworkBytes": 0,
+    "heapAfterRepeatMB": 23.9
+  },
+  "trendOnline": 0.3521965439,
+  "serviceWorker": {
+    "active": true,
+    "controlled": true,
+    "waitedMs": 8
+  },
+  "offline": {
+    "reloaded": true,
+    "firstGlobeMs": 5222,
+    "ms": 7299,
+    "appText": "Earth Explorer\nresearch prototype\nExplore\nCompare\nX-Ray\nScenario Lab\n○\nOffline: local data only\nOffline library\nData & credits\n1 · LOCATION\nGo\nExample places…\nDushanbe, Tajikistan\nPamir mountains, Tajikistan\nAral Sea region\nCentral Amazon, Brazil\nSahel, Niger\nGreenland ice sheet margin\nYakutsk, Russ",
+    "trendOffline": {
+      "slope": 0.3521965439,
+      "swCache": "Thu, 05 Nov 2026 16:16:16 GMT"
+    },
+    "status": "○Offline: local data only",
+    "visFrameOffline": {
+      "status": 200,
+      "bytes": 30808,
+      "magic": "EEG1"
+    },
+    "requests": 26,
+    "bytes": 0,
+    "byHost": {
+      "localhost:4173": {
+        "requests": 25,
+        "bytes": 0,
+        "failed": 0
+      },
+      "": {
+        "requests": 1,
+        "bytes": 0,
+        "failed": 0
+      }
+    }
+  },
+  "consoleErrors": []
+}

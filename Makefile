@@ -27,7 +27,6 @@ help:
 	@echo "make clean          remove build output"
 
 up:
-	mkdir -p data/grids
 	WEB_PORT=$(WEB_PORT) docker compose up --build -d
 	@echo "http://localhost:$(WEB_PORT)"
 

@@ -99,7 +99,12 @@ verify() {
   local health packs
   health=$(curl -fsS "$BASE/api/v1/health") || fail "no answer from $BASE/api/v1/health; start the stack with scripts/deploy.sh"
   grep -q '"status":"ok"' <<<"$health" || fail "health status is not ok"
-  packs=$(packs_count) || fail "request to /api/v1/packs failed"
+  packs=""
+  for _ in 1 2 3; do
+    if packs=$(packs_count 2>/dev/null); then break; fi
+    packs=""
+  done
+  [ -n "$packs" ] || fail "request to /api/v1/packs failed"
   [ "$packs" -eq "$PACKS_EXPECTED" ] || fail "/api/v1/packs lists $packs packs, expected $PACKS_EXPECTED"
   crust_served || fail "/crust1/crust1.bin is not served with Content-Length $CRUST_BYTES"
   echo "verify: health ok, $packs packs, crust1.bin $CRUST_BYTES bytes"

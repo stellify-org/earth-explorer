@@ -1,10 +1,10 @@
 // Scenario Lab (Nurek Reservoir): the level slider and the water balance must move the water GEOMETRY,
 // the numbers shown must match the model, and the scenario must work with the network switched off.
-//   node tests/e2e/scenario-lab.mjs http://localhost:8088/     (needs Playwright)   SHOTS=/dir saves screenshots
+//   node tests/e2e/scenario-lab.mjs http://localhost:8080/     (needs Playwright)   SHOTS=/dir saves screenshots
 import assert from "node:assert/strict";
 import { createRequire } from "node:module"; import { homedir } from "node:os"; import { join } from "node:path";
 const { chromium } = createRequire(join(process.env.PLAYWRIGHT_DIR ?? join(homedir(), ".claude/skills/gstack/browse"), "package.json"))("playwright");
-const url = process.argv[2] ?? "http://localhost:8088/";
+const url = process.argv[2] ?? "http://localhost:8080/";
 const b = await chromium.launch({ args: ["--enable-unsafe-swiftshader"] });
 try {
   const ctx = await b.newContext({ viewport: { width: 1440, height: 900 } }); // service worker allowed: the offline part needs it

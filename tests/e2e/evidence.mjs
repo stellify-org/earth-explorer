@@ -1,13 +1,13 @@
 // Event impact — the documented geographic evidence of an event drawn on the globe (frontend/src/events/evidence).
 // One verified case per major category plus the catalogue paths; every expectation is computed from the data
 // the page itself loaded (packs in /evidence, the API bundle), never from constants written here.
-//   node tests/e2e/evidence.mjs http://localhost:8088/     (needs Playwright; USGS, NASA EONET and NASA GIBS must be reachable)
+//   node tests/e2e/evidence.mjs http://localhost:8080/     (needs Playwright; USGS, NASA EONET and NASA GIBS must be reachable)
 //   SHOTS=/dir saves screenshots     SKIP_OFFLINE=1 skips the offline part (the Vite dev server has no service worker)
 //   CHROMIUM_ARGS="--use-angle=gl --enable-gpu --ignore-gpu-blocklist" runs on the real GPU
 import assert from "node:assert/strict";
 import { createRequire } from "node:module"; import { homedir } from "node:os"; import { join } from "node:path";
 const { chromium } = createRequire(join(process.env.PLAYWRIGHT_DIR ?? join(homedir(), ".claude/skills/gstack/browse"), "package.json"))("playwright");
-const url = process.argv[2] ?? "http://localhost:8088/";
+const url = process.argv[2] ?? "http://localhost:8080/";
 const b = await chromium.launch({ args: (process.env.CHROMIUM_ARGS ?? "--enable-unsafe-swiftshader").split(" ") });
 try {
   const ctx = await b.newContext({ viewport: { width: 1440, height: 900 } });

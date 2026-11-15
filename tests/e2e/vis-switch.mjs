@@ -4,11 +4,11 @@
 //   1. stale  — the picture must not change when one more frame is forced (scene.requestRender());
 //               a change means the first picture was drawn from an out-of-date texture;
 //   2. flat   — the share of the most frequent colour inside the globe disc must stay below FLAT_SHARE.
-//   node tests/e2e/vis-switch.mjs http://localhost:8088/     (needs Playwright; PLAYWRIGHT_DIR like the other tests)
+//   node tests/e2e/vis-switch.mjs http://localhost:8080/     (needs Playwright; PLAYWRIGHT_DIR like the other tests)
 //   SHOTS=/dir saves the screenshots; CHROMIUM_ARGS="--use-angle=gl ..." replaces the launch arguments.
 import { createRequire } from "node:module"; import { homedir } from "node:os"; import { join } from "node:path";
 const { chromium } = createRequire(join(process.env.PLAYWRIGHT_DIR ?? join(homedir(), ".claude/skills/gstack/browse"), "package.json"))("playwright");
-const url = process.argv[2] ?? "http://localhost:8088/";
+const url = process.argv[2] ?? "http://localhost:8080/";
 const FLAT_SHARE = 0.9, STALE_SHARE = 0.02;
 const CLIP = { x: 570, y: 280, width: 300, height: 300 }; // inside the globe disc at 1440x900 (home view)
 const b = await chromium.launch({ args: process.env.CHROMIUM_ARGS ? process.env.CHROMIUM_ARGS.split(" ") : ["--enable-unsafe-swiftshader"] });

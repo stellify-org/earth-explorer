@@ -144,7 +144,7 @@ reader for the point layers of Mapbox vector tiles. A new pack must be added to 
 - Vitest: `frontend/src/events/evidence/evidence.test.ts` (16) — the six classes, provenance of every pack
   layer, detections inside the perimeter, radii ordering, flood frame files, quadrant geometry, tiers,
   record adapter never invents a footprint.
-- Browser: `node tests/e2e/evidence.mjs http://localhost:8088/` — the four verified cases, layer switches
+- Browser: `node tests/e2e/evidence.mjs http://localhost:8080/` — the four verified cases, layer switches
   (pixels checked in screenshots), dated steps against the pack contents, far / near, resources released,
   point-only fire, catalogue flood, catalogue earthquakes with and without ShakeMap, trend hand-over, offline.
 

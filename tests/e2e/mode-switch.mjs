@@ -1,12 +1,12 @@
 // Regression test: switching modes and visualisation types must never break a view.
-//   node tests/e2e/mode-switch.mjs http://localhost:8088/   (needs Playwright; PLAYWRIGHT_DIR like tests/perf)
+//   node tests/e2e/mode-switch.mjs http://localhost:8080/   (needs Playwright; PLAYWRIGHT_DIR like tests/perf)
 import { createRequire } from "node:module"; import { homedir } from "node:os"; import { join } from "node:path";
 const { chromium } = createRequire(join(process.env.PLAYWRIGHT_DIR ?? join(homedir(), ".claude/skills/gstack/browse"), "package.json"))("playwright");
 const b = await chromium.launch({ args: ["--enable-unsafe-swiftshader"] });
 const ctx = await b.newContext({ viewport: { width: 1440, height: 900 }, serviceWorkers: "block" }); await ctx.addInitScript(() => localStorage.setItem("ee.advanced", "1")); // Advanced Tools: the full panels this check drives
 const p = await ctx.newPage();
 const errs = []; p.on("pageerror", (e) => errs.push("PAGEERROR " + e.stack)); p.on("console", (m) => { if (m.type() === "error") errs.push("CONSOLE " + m.text()); });
-await p.goto(process.argv[2] ?? "http://localhost:8088/"); await p.waitForTimeout(6000);
+await p.goto(process.argv[2] ?? "http://localhost:8080/"); await p.waitForTimeout(6000);
 // Header: Explore (Explore Earth, Travel in Time) · Investigate · Discover (Event Detective, Inside Earth) · What If?; Compare is in the "More" menu.
 const NAV = ["explore", "compare", "xray", "lab"];
 const GROUP = { explore: "nav-g-explore", xray: "nav-g-discover", compare: "more-menu" }; // Explore / Discover open a two-item menu; What If? is direct

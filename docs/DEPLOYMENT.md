@@ -45,7 +45,7 @@ Set variables in the environment or in a `.env` file next to `docker-compose.yml
 
 | Variable | Default | Meaning |
 |---|---|---|
-| `WEB_PORT` | `8088` | Host port published by the `web` container |
+| `WEB_PORT` | `8080` | Host port published by the `web` container |
 | `LOG_LEVEL` | `info` | API log level |
 
 Example: `WEB_PORT=80 ./scripts/deploy.sh`.

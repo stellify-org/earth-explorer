@@ -3,7 +3,7 @@ set -euo pipefail
 
 cd "$(dirname "$0")/.."
 
-WEB_PORT="${WEB_PORT:-8088}"
+WEB_PORT="${WEB_PORT:-8080}"
 export WEB_PORT
 
 command -v docker >/dev/null || { echo "docker is not installed" >&2; exit 1; }
